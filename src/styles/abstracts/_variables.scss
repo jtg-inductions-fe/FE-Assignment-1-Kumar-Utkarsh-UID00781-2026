@@ -1,0 +1,55 @@
+@use 'functions' as f;
+
+// Font sizes
+$fs-300: f.rem(14px);
+$fs-400: f.rem(16px);
+$fs-450: f.rem(18px);
+$fs-500: f.rem(24px);
+$fs-600: f.rem(32px);
+$fs-650: f.rem(36px);
+$fs-700: f.rem(40px);
+$fs-750: f.rem(44px);
+$fs-800: f.rem(56px);
+$fs-900: f.rem(70px);
+
+// Font family
+$ff-heading: 'Poppins', sans-serif;
+$ff-subheading: 'Poppins', sans-serif;
+$ff-button: 'Poppins', sans-serif;
+$ff-text: 'Inter', sans-serif;
+
+// Font Weight
+$fw-heading: 700;
+$fw-subheading: 700;
+$fw-button: 700;
+$fw-card-value: 700;
+$fw-card-label: 400;
+$fw-text: 400;
+
+// Line Height
+$line-height-heading: 1.2;
+$line-height-subheading: 1.2;
+$line-height-text: 1.6;
+
+// Colors
+$neutral-900: #000000;
+$neutral-700: #191825;
+$neutral-300: #e1e1e1e1;
+$neutral-200: #eeeeee;
+$neutral-100: #ffffff;
+
+$orange-400: #ff5722;
+$pink-400: #f85e95;
+$purple-400: #5d50c6;
+$yellow-400: #facd49;
+
+// Shadows
+$shadow-sm: 0 5px 11px 0 rgba(0, 0, 0, 0.1);
+$shadow-md: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 45px 27px 0 rgba(0, 0, 0, 0.05);
+
+// Breakpoints
+$breakpoints: (
+    'md': f.rem(430px),
+    'lg': f.rem(1024px),
+);

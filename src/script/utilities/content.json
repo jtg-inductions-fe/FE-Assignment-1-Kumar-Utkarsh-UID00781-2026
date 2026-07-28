@@ -1,0 +1,228 @@
+{
+    "navbar": {
+        "logo": {
+            "text": "Travlog",
+            "src": "",
+            "href": ""
+        },
+        "links": [
+            {
+                "label": "Home",
+                "href": "/"
+            },
+            {
+                "label": "Discover",
+                "href": "/discover"
+            },
+            {
+                "label": "Special Deals",
+                "href": "/deals"
+            },
+            {
+                "label": "Contact",
+                "href": "/contact"
+            }
+        ],
+        "auth": {
+            "login": {
+                "label": "Log In",
+                "href": "/"
+            },
+            "signup": {
+                "label": "Sign Up",
+                "href": "/"
+            }
+        }
+    },
+    "hero": {
+        "eyebrow": "Explore the world!",
+        "title": "Travel top destination of the world",
+        "accentTitle": "top destination",
+        "description": "We always make our customer happy by providing as many choices as possible.",
+        "buttons": [
+            {
+                "label": "Get Started",
+                "href": "#"
+            },
+            {
+                "label": "Watch Demo",
+                "href": "#"
+            }
+        ],
+        "images": [
+            {
+                "alt": "Beach destination",
+                "src": "#"
+            },
+            {
+                "alt": "Traveler sitting on mountain",
+                "src": "#"
+            },
+            {
+                "alt": "Traveler with luggage",
+                "src": "#"
+            }
+        ],
+        "floatingBadge": {
+            "label": "Top Places"
+        },
+        "partners": [
+            {
+                "name": "Tripadvisor",
+                "src": "",
+                "alt": "Tripadvisor"
+            },
+            {
+                "name": "Expedia",
+                "src": "",
+                "alt": "Expedia"
+            },
+            {
+                "name": "Booking.com",
+                "src": "",
+                "alt": "Booking.com"
+            },
+            {
+                "name": "Airbnb",
+                "src": "",
+                "alt": "Airbnb"
+            },
+            {
+                "name": "Orbitz",
+                "src": "",
+                "alt": "Orbitz"
+            }
+        ]
+    },
+    "features": {
+        "eyebrow": "Travel Point",
+        "title": "We helping you find your dream location",
+        "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.",
+        "image": {
+            "alt": "Traveler with suitcase",
+            "src": ""
+        },
+        "cards": [
+            {
+                "value": "500+",
+                "label": "Holiday Package"
+            },
+            {
+                "value": "100",
+                "label": "Luxury Hotel"
+            },
+            {
+                "value": "7",
+                "label": "Premium Airlines"
+            },
+            {
+                "value": "2k+",
+                "label": "Happy Customer"
+            }
+        ]
+    },
+    "testimonials": {
+        "eyebrow": "Testimonials",
+        "title": "Trust our clients",
+        "items": [
+            {
+                "name": "Mark Smith",
+                "designation": "Travel Enthusiast",
+                "avatar": {
+                    "src": ""
+                },
+                "rating": 5,
+                "review": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC."
+            }
+        ]
+    },
+    "footer": {
+        "brand": {
+            "logo": {
+                "src": "",
+                "alt": "Travlog logo"
+            },
+            "name": "Travlog",
+            "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC."
+        },
+        "socials": [
+            {
+                "platform": "Facebook",
+                "href": "www.facebook.com",
+                "icon": ""
+            },
+            {
+                "platform": "Twitter",
+                "href": "www.x.com",
+                "icon": ""
+            },
+            {
+                "platform": "Instagram",
+                "href": "www.instagram.com",
+                "icon": ""
+            }
+        ],
+        "linkLists": [
+            {
+                "heading": "Company",
+                "links": [
+                    {
+                        "label": "About",
+                        "href": ""
+                    },
+                    {
+                        "label": "Career",
+                        "href": ""
+                    },
+                    {
+                        "label": "Mobile",
+                        "href": ""
+                    }
+                ]
+            },
+            {
+                "heading": "Contact",
+                "links": [
+                    {
+                        "label": "Why Travlog?",
+                        "href": ""
+                    },
+                    {
+                        "label": "Partner with us",
+                        "href": ""
+                    },
+                    {
+                        "label": "FAQ's",
+                        "href": ""
+                    },
+                    {
+                        "label": "Blog",
+                        "href": ""
+                    }
+                ]
+            },
+            {
+                "heading": "Meet Us",
+                "links": [
+                    {
+                        "label": "About",
+                        "href": ""
+                    },
+                    {
+                        "label": "Career",
+                        "href": ""
+                    },
+                    {
+                        "label": "Mobile",
+                        "href": ""
+                    }
+                ]
+            }
+        ],
+        "meetUs": {
+            "phone": "+00 92 1234 56789",
+            "email": "info@travlog.com",
+            "address": "205, R Street, New York, BD23200"
+        }
+    }
+}

@@ -1,1 +1,9 @@
-// TODO: Add styles as per the requirement
+@charset 'utf-8';
+
+@use './abstracts';
+@use './base';
+@use './components';
+@use './layout';
+@use './pages';
+@use './themes/default';
+@use './vendors';

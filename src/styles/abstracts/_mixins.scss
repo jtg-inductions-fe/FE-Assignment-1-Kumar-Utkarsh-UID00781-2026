@@ -1,0 +1,61 @@
+@use 'variables' as v;
+
+@mixin flex(
+    $direction: null,
+    $justify: null,
+    $align: null,
+    $wrap: null,
+    $row-gap: null,
+    $col-gap: null
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    row-gap: $row-gap;
+    column-gap: $col-gap;
+}
+
+@mixin grid($rows: auto, $cols: auto, $gap) {
+    display: grid;
+    grid-template-rows: $rows;
+    grid-template-columns: $cols;
+    gap: $gap;
+}
+
+@mixin shadow($shadows...) {
+    box-shadow: $shadows;
+}
+
+@mixin position($type, $top, $right, $bottom, $left) {
+    position: $type;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+}
+
+@mixin respond-to($breakpoint) {
+    @each $key, $val in v.$breakpoints {
+        @if ($breakpoint == $key) {
+            @media (min-width: $val) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin typography(
+    $size: null,
+    $weight: null,
+    $family: null,
+    $line-height: 1.2,
+    $color: null
+) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+    line-height: $line-height;
+    color: $color;
+}

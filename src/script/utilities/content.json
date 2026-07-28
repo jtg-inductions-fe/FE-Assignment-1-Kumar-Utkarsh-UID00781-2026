@@ -2,7 +2,7 @@
     "navbar": {
         "logo": {
             "text": "Travlog",
-            "src": "",
+            "src": "/src/assets/images/company-logo.png",
             "href": ""
         },
         "links": [
@@ -52,15 +52,15 @@
         "images": [
             {
                 "alt": "Beach destination",
-                "src": "#"
+                "src": "/src/assets/images/hero-beach"
             },
             {
                 "alt": "Traveler sitting on mountain",
-                "src": "#"
+                "src": "/src/assets/images/hero-mountain"
             },
             {
                 "alt": "Traveler with luggage",
-                "src": "#"
+                "src": "/src/assets/images/hero-city"
             }
         ],
         "floatingBadge": {
@@ -148,17 +148,17 @@
         "socials": [
             {
                 "platform": "Facebook",
-                "href": "www.facebook.com",
+                "href": "https://www.facebook.com",
                 "icon": ""
             },
             {
                 "platform": "Twitter",
-                "href": "www.x.com",
+                "href": "https://www.x.com",
                 "icon": ""
             },
             {
                 "platform": "Instagram",
-                "href": "www.instagram.com",
+                "href": "https://www.instagram.com",
                 "icon": ""
             }
         ],

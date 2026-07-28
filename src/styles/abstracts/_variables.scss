@@ -13,10 +13,10 @@ $fs-800: f.rem(56px);
 $fs-900: f.rem(70px);
 
 // Font family
-$ff-heading: 'Poppins', sans-serif;
-$ff-subheading: 'Poppins', sans-serif;
-$ff-button: 'Poppins', sans-serif;
-$ff-text: 'Inter', sans-serif;
+$ff-heading: Poppins, sans-serif;
+$ff-subheading: Poppins, sans-serif;
+$ff-button: Poppins, sans-serif;
+$ff-text: Inter, sans-serif;
 
 // Font Weight
 $fw-heading: 700;
@@ -37,7 +37,6 @@ $neutral-700: #191825;
 $neutral-300: #e1e1e1e1;
 $neutral-200: #eeeeee;
 $neutral-100: #ffffff;
-
 $orange-400: #ff5722;
 $pink-400: #f85e95;
 $purple-400: #5d50c6;

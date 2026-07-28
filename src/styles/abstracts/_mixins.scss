@@ -17,7 +17,7 @@
     column-gap: $col-gap;
 }
 
-@mixin grid($rows: auto, $cols: auto, $gap) {
+@mixin grid($rows: auto, $cols: auto, $gap: null) {
     display: grid;
     grid-template-rows: $rows;
     grid-template-columns: $cols;
@@ -38,7 +38,7 @@
 
 @mixin respond-to($breakpoint) {
     @each $key, $val in v.$breakpoints {
-        @if ($breakpoint == $key) {
+        @if $breakpoint == $key {
             @media (min-width: $val) {
                 @content;
             }

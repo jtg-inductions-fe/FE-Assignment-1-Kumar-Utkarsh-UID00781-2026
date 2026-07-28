@@ -23,7 +23,7 @@
         width: fit-content;
     }
 
-    @include respond-to('md') {
+    @include respond-to('lg') {
         font-size: map.get($fs-button, 'lg');
     }
 

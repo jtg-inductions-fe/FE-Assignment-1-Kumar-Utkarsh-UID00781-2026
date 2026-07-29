@@ -32,6 +32,12 @@ $fs-button: (
     'lg': $fs-300,
 );
 
+$fs-nav-link: (
+    'sm': $fs-500,
+    'md': $fs-500,
+    'lg': $fs-300
+);
+
 body {
     line-height: $line-height-text;
     font-family: $ff-text;

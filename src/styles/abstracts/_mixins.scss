@@ -28,7 +28,7 @@
     box-shadow: $shadows;
 }
 
-@mixin position($type, $top, $right, $bottom, $left) {
+@mixin position($type: static, $top: null, $right: null, $bottom: null, $left: null) {
     position: $type;
     top: $top;
     bottom: $bottom;
@@ -50,7 +50,7 @@
     $size: null,
     $weight: null,
     $family: null,
-    $line-height: 1.2,
+    $line-height: null,
     $color: null
 ) {
     font-size: $size;

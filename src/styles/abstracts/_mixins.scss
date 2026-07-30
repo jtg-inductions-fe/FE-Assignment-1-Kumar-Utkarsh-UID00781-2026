@@ -28,7 +28,13 @@
     box-shadow: $shadows;
 }
 
-@mixin position($type: static, $top: null, $right: null, $bottom: null, $left: null) {
+@mixin position(
+    $type: static,
+    $top: null,
+    $right: null,
+    $bottom: null,
+    $left: null
+) {
     position: $type;
     top: $top;
     bottom: $bottom;

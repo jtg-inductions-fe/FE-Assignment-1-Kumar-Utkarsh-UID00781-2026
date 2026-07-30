@@ -4,12 +4,23 @@
     margin: 0;
     padding: 0;
     border: 0;
+    box-sizing: border-box;
     vertical-align: baseline;
 }
 
 *:focus {
     outline: 2px dashed theme.$brand-color-primary;
     outline-offset: 4px;
+}
+
+html {
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+    height: 100%;
 }
 
 input,

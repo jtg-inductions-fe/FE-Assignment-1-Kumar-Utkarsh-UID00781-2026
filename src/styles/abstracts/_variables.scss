@@ -47,6 +47,12 @@ $shadow-sm: 0 5px 11px 0 rgba(0, 0, 0, 0.1);
 $shadow-md: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
 $shadow-lg: 0 45px 27px 0 rgba(0, 0, 0, 0.05);
 
+// Border Radius
+$border-radius-sm: 8px;
+$border-radius-md: 16px;
+$border-radius-lg: 32px;
+$border-radius-full: 1000px;
+
 // Breakpoints
 $breakpoints: (
     'md': f.rem(430px),

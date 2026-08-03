@@ -4,10 +4,10 @@
     max-width: rem(1280px);
     width: 100%;
     margin-inline: auto;
-    padding-inline: 1rem;
+    padding-inline: rem(16px);
 
     @include respond-to('md') {
-        padding-inline: 4rem;
+        padding-inline: rme(64px);
     }
 
     @include respond-to('lg') {

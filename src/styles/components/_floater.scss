@@ -4,16 +4,16 @@
 @use 'sass:map';
 
 .floater {
-    @include shadow($shadow-lg);
-    border-radius: 100px;
+    box-shadow: $shadow-md, $shadow-lg;
+    border-radius: $border-radius-full;
     background-color: theme.$brand-color-primary;
     color: $neutral-100;
-    font-size: 1rem;
+    font-size: rem(16px);
     width: fit-content;
-    padding: 0.5em;
+    padding: rem(8px);
 
     @include respond-to('md') {
-        font-size: 2rem;
+        font-size: rem(32px);
     }
 
     &--text {
@@ -26,19 +26,19 @@
             $col-gap: 0.5em
         );
         @include typography($family: $ff-button, $weight: $fw-button);
-        font-size: 0.5rem;
+        font-size: rem(8px);
         color: $neutral-100;
-        padding: 0.5em 1em;
+        padding: rem(8px, 16px);
         [class^='icon-'],
         [class*=' icon-'] {
-            font-size: 0.75rem;
+            font-size: rem(24px);
         }
 
         @include respond-to('md') {
             font-size: map.get($fs-button, 'md');
             [class^='icon-'],
             [class*=' icon-'] {
-                font-size: 1.5rem;
+                font-size: rem(24px);
             }
         }
 
@@ -46,7 +46,7 @@
             font-size: map.get($fs-button, 'lg');
             [class^='icon-'],
             [class*=' icon-'] {
-                font-size: 1.5rem;
+                font-size: rem(24px);
             }
         }
     }

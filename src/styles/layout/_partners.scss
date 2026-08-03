@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.partners {
+    @include flex(
+        $justify: center,
+        $wrap: wrap,
+        $align: center,
+        $row-gap: rem(32px),
+        $col-gap: rem(28px)
+    );
+    padding-block: rem(32px);
+
+    @include respond-to('md') {
+        padding-block: rem(64px);
+    }
+
+    @include respond-to('lg') {
+        @include flex($justify: space-between);
+    }
+
+    &__partner-img {
+        height: rem(20px);
+        @include respond-to('md') {
+            height: rem(32px);
+        }
+    }
+}

@@ -62,7 +62,111 @@
                 </div>
             </div>
         </header>
-        <main id="main-content"></main>
+        <main id="main-content">
+            <section class="hero container">
+                <div class="hero__gradient-circle" aria-hidden="true"></div>
+                <div class="hero__illustration">
+                    <img
+                        src="/assets/images/hero-background-visual.svg"
+                        alt=""
+                        aria-hidden="true"
+                        class="hero__illustration__background-img"
+                    />
+                    <div class="hero__img-container">
+                        <img
+                            src="/assets/images/hero-beach.jpg"
+                            alt="Beach destination"
+                            class="hero__img"
+                            id="img-1"
+                        /><img
+                            src="/assets/images/hero-mountain.jpg"
+                            alt="Mountain destination"
+                            class="hero__img"
+                            id="img-2"
+                        /><img
+                            src="/assets/images/hero-city.jpg"
+                            alt="City Destination"
+                            class="hero__img"
+                            id="img-3"
+                        />
+                        <div
+                            class="hero__illustration__floater floater icon-location-arrow"
+                            aria-hidden="true"
+                            id="hero-floater-arrow"
+                        ></div>
+                        <div
+                            class="hero__illustration__floater floater icon-user-add"
+                            aria-hidden="true"
+                            id="hero-floater-user"
+                        ></div>
+                        <div
+                            class="hero__illustration__floater floater floater--text"
+                            aria-hidden="true"
+                        >
+                            <span class="icon-location"></span>Top places
+                        </div>
+                    </div>
+                </div>
+                <article class="hero__text-content">
+                    <div class="hero__floater floater floater--text">
+                        Explore the world
+                        <span class="icon-briefcase" aria-hidden="true"></span>
+                    </div>
+                    <h1 class="hero__display-heading display-heading">
+                        Travel
+                        <span class="hero__display-heading--accent"
+                            >top destinations</span
+                        >
+                        of the world
+                    </h1>
+                    <p class="hero__text">
+                        We always make our customers happy by providing as many
+                        choices as possible
+                    </p>
+                    <div class="hero__btns">
+                        <button
+                            type="button"
+                            class="hero__btn btn btn--primary"
+                        >
+                            Get Started
+                        </button>
+                        <button
+                            type="button"
+                            class="hero__btn btn btn--secondary btn--bordered"
+                            aria-label="Watch Travlog demo video"
+                        >
+                            <span
+                                class="hero__btn__icon icon-media-play"
+                            ></span>
+                            Watch demo
+                        </button>
+                    </div>
+                </article>
+            </section>
+            <section class="partners container">
+                <img
+                    src="/assets/images/partners/tripadvisor.png"
+                    alt="Tripadvisor logo"
+                    class="partners__partner-img"
+                /><img
+                    src="/assets/images/partners/expedia.png"
+                    alt="Expedia logo"
+                    class="partners__partner-img"
+                /><img
+                    src="/assets/images/partners/booking.com.png"
+                    alt="Booking.com logo"
+                    class="partners__partner-img"
+                /><img
+                    src="/assets/images/partners/airbnb.png"
+                    alt="Airbnb logo"
+                    class="partners__partner-img"
+                /><img
+                    src="/assets/images/partners/orbitz.png"
+                    alt="Orbitz logo"
+                    class="partners__partner-img"
+                />
+            </section>
+        </main>
         <script type="module" src="./src/script/renderFromJSON.js"></script>
         <script type="module" src="./src/script/index.js"></script>
     </body>

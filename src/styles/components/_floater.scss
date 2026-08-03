@@ -4,7 +4,7 @@
 @use 'sass:map';
 
 .floater {
-    @include shadow($shadow-md, $shadow-lg);
+    @include shadow($shadow-lg);
     border-radius: 100px;
     background-color: theme.$brand-color-primary;
     color: $neutral-100;

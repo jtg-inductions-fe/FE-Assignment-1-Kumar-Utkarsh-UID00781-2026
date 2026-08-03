@@ -4,8 +4,8 @@
 @use 'sass:map';
 
 .header {
+    z-index: 10;
     padding-block: 1em;
-    background-color: theme.$bg-color;
     @include flex($justify: space-between, $align: center, $col-gap: 1rem);
     @include position(sticky, 0px);
     @include respond-to('lg') {
@@ -44,7 +44,7 @@
 
         @include respond-to('md') {
             @include position(absolute, $right: 50%);
-            transform: translateX(-50%);
+            transform: translateX(50%);
         }
 
         @include respond-to('lg') {

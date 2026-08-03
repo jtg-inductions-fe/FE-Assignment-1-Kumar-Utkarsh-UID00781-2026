@@ -1,4 +1,5 @@
 @use '../themes/default' as theme;
+@use '../abstracts' as *;
 
 * {
     margin: 0;
@@ -21,6 +22,10 @@ html {
 body {
     min-height: 100vh;
     height: 100%;
+
+    @include respond-to('lg') {
+        padding-block: 2rem;
+    }
 }
 
 input,

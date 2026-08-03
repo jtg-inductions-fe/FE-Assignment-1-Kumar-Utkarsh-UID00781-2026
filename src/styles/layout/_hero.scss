@@ -1,0 +1,219 @@
+@use '../themes/default' as theme;
+@use '../abstracts' as *;
+@use '../base' as *;
+@use 'sass:map';
+
+.hero {
+    @include flex($direction: column, $row-gap: 2rem);
+    padding-block: 3rem;
+    @include respond-to('md') {
+        padding-block: 5rem;
+    }
+    @include respond-to('lg') {
+        padding-block: 4rem;
+        @include flex($direction: row-reverse, $col-gap: 0);
+    }
+
+    &__gradient-circle {
+        @include position($type: absolute, $top: 0, $left: 0);
+        width: 250px;
+        aspect-ratio: 1 / 1;
+        border-radius: $border-radius-full;
+        filter: blur(150px);
+        opacity: 50%;
+        background-color: theme.$brand-color-tertiary;
+        z-index: -1;
+
+        @include respond-to('md') {
+            filter: blur(250px);
+            width: 420px;
+        }
+
+        @include respond-to('lg') {
+            width: 500px;
+        }
+    }
+
+    &__illustration {
+        position: relative;
+        @include respond-to('lg') {
+            flex: 1.8;
+        }
+        &__background-img {
+            @include position($type: absolute, $top: 0);
+            width: 100%;
+        }
+        &__floater {
+            @include position($type: absolute);
+            z-index: 3;
+        }
+    }
+
+    &__img-container {
+        position: relative;
+
+        margin-top: 10%;
+        margin-inline: auto;
+        width: 70%;
+        // Magic Number: The aspect ratio comes from Figma design
+        aspect-ratio: 57 / 63;
+        @include grid(repeat(6, 1fr), repeat(2, 1fr), 5%);
+        grid-template-areas:
+            'img1 .'
+            'img1 img3'
+            'img1 img3'
+            'img2 img3'
+            'img2 img3'
+            'img2 .';
+        #hero-floater-arrow {
+            background-color: theme.$brand-color-secondary;
+            top: 42%;
+            left: 0;
+            transform: translateX(-50%);
+        }
+        #hero-floater-user {
+            background-color: theme.$brand-color-tertiary;
+            bottom: 0;
+            right: 25%;
+        }
+        .floater--text {
+            background-color: theme.$bg-color;
+            color: theme.$text-color-highlighted;
+            bottom: 25%;
+            right: 0;
+            transform: translateX(50%);
+            @include respond-to('md') {
+                padding: 16px 32px;
+            }
+            span {
+                color: $yellow-400;
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 2;
+        border-radius: $border-radius-md;
+
+        @include respond-to('lg') {
+            border-radius: $border-radius-lg;
+        }
+    }
+
+    #img-1 {
+        grid-area: img1;
+    }
+
+    #img-2 {
+        grid-area: img2;
+    }
+
+    #img-3 {
+        grid-area: img3;
+    }
+
+    &__text-content {
+        @include flex($direction: column, $justify: center);
+        @include respond-to('lg') {
+            flex: 1;
+        }
+        &__background-img {
+            width: 100%;
+        }
+    }
+
+    &__floater {
+        font-size: rem(14px);
+        background-color: unset;
+        color: theme.$brand-color-secondary;
+        margin-bottom: rem(16px);
+        margin-inline: auto;
+        padding: 1rem 2rem;
+
+        span {
+            font-size: rem(24px);
+        }
+
+        @include respond-to('md') {
+            margin-bottom: rem(44px);
+        }
+        @include respond-to('lg') {
+            margin-inline: unset;
+        }
+    }
+
+    &__display-heading {
+        margin-bottom: rem(24px);
+        &--accent {
+            color: theme.$brand-color-secondary;
+        }
+
+        @include respond-to('md') {
+            margin-bottom: rem(44px);
+        }
+    }
+
+    &__text {
+        @include typography(
+            $size: map.get($fs-text, 'sm'),
+            $weight: $fw-text,
+            $family: $ff-text,
+            $line-height: $line-height-text,
+            $color: theme.$text-color-base
+        );
+
+        text-align: center;
+        margin-inline: auto;
+        margin-bottom: rem(32px);
+        max-width: 40ch;
+
+        @include respond-to('md') {
+            margin-bottom: rem(44px);
+            font-size: map.get($fs-text, 'md');
+        }
+        @include respond-to('lg') {
+            text-align: start;
+            margin-inline: unset;
+
+            font-size: map.get($fs-text, 'lg');
+        }
+    }
+
+    &__btns {
+        @include respond-to('md') {
+            @include flex($direction: row, $justify: center, $col-gap: 1rem);
+        }
+        @include respond-to('lg') {
+            @include flex($justify: start);
+        }
+
+        .btn {
+            span {
+                font-size: rem(24px);
+            }
+        }
+    }
+
+    .btn--primary {
+        box-shadow: $shadow-sm, $shadow-md;
+    }
+    &__btn {
+        margin-bottom: 1rem;
+
+        @include respond-to('md') {
+            margin-bottom: 01;
+        }
+        &__icon {
+            font-size: rem(24px);
+            background-color: theme.$brand-color-primary;
+            color: $neutral-100;
+            border-radius: 100px;
+            padding-left: 4px;
+            padding-right: 1px;
+            padding-block: 2px;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.container {
+    max-width: rem(1280px);
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: rem(16px);
+
+    @include respond-to('md') {
+        padding-inline: rme(64px);
+    }
+
+    @include respond-to('lg') {
+        padding-inline: rem(40px);
+    }
+}

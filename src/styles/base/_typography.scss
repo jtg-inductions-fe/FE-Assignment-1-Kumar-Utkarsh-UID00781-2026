@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+@use '../themes/default' as theme;
+@use 'sass:map';
+
+$fs-display-heading: (
+    'sm': $fs-700,
+    'md': $fs-800,
+    'lg': $fs-900,
+);
+
+$fs-section-heading: (
+    'sm': $fs-600,
+    'md': $fs-700,
+    'lg': $fs-750,
+);
+
+$fs-eyebrow-header: (
+    'sm': $fs-400,
+    'md': $fs-500,
+    'lg': $fs-500,
+);
+
+$fs-text: (
+    'sm': $fs-400,
+    'md': $fs-450,
+    'lg': $fs-450,
+);
+
+$fs-button: (
+    'sm': $fs-300,
+    'md': $fs-300,
+    'lg': $fs-300,
+);
+
+$fs-nav-link: (
+    'sm': $fs-500,
+    'md': $fs-500,
+    'lg': $fs-300
+);
+
+body {
+    line-height: $line-height-text;
+    font-family: $ff-text;
+    -webkit-font-smoothing: antialiased;
+}

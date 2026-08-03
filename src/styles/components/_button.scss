@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+@use '../base/typography' as *;
+@use '../themes/default' as theme;
+@use 'sass:map';
+
+.btn {
+    @include flex(row, center, center, nowrap, 0.5rem, 0.5rem);
+
+    @include typography(
+        $size: map.get($fs-button, 'sm'),
+        $weight: $fw-button,
+        $family: $ff-button,
+        $line-height: $line-height-heading
+    );
+    border: none;
+    border-radius: $border-radius-full;
+    padding: rem(16px, 32px);
+    text-align: center;
+    width: 100%;
+
+    @include respond-to('md') {
+        font-size: map.get($fs-button, 'md');
+        width: fit-content;
+    }
+
+    @include respond-to('lg') {
+        font-size: map.get($fs-button, 'lg');
+    }
+
+    &--primary {
+        background-color: theme.$brand-color-primary;
+        color: $neutral-100;
+    }
+    &--secondary {
+        background-color: theme.$bg-color;
+        color: $neutral-900;
+    }
+    &--bordered {
+        border: 1px solid $neutral-200;
+    }
+}

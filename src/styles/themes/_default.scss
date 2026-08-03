@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use '../abstracts/' as *;
+
+$bg-color: $neutral-100;
+$heading-color: $neutral-900;
+$heading-color-accent: $pink-400;
+$text-color-light: rgba($neutral-700, 0.25);
+$text-color-base: rgba($neutral-700, 0.5);
+$text-color-dark: rgba($neutral-700, 0.75);
+$text-color-highlighted: $neutral-900;
+$brand-color-primary: $purple-400;
+$brand-color-secondary: $pink-400;
+$brand-color-tertiary: $orange-400;

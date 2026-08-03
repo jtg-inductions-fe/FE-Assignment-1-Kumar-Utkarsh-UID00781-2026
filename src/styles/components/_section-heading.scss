@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+@use '../themes/default' as theme;
+@use '../base/typography' as *;
+@use 'sass:map';
+
+.section-heading {
+    @include typography(
+        $size: map.get($fs-section-heading, 'sm'),
+        $weight: $fw-heading,
+        $family: $ff-heading,
+        $line-height: $line-height-heading,
+        $color: theme.$heading-color
+    );
+
+    @include respond-to('md') {
+        font-size: map.get($fs-section-heading, 'md');
+    }
+    @include respond-to('lg') {
+        font-size: map.get($fs-section-heading, 'lg');
+    }
+
+    &--accent {
+        color: theme.$heading-color-accent;
+    }
+}

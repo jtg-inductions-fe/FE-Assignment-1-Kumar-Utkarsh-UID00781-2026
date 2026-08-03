@@ -1,0 +1,79 @@
+@use 'variables' as v;
+
+// LAYOUT
+
+// Creates a flex container with optional flex properties
+// Unused properties when including this mixin are omitted.
+@mixin flex(
+    $direction: null,
+    $justify: null,
+    $align: null,
+    $wrap: null,
+    $row-gap: null,
+    $col-gap: null
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    row-gap: $row-gap;
+    column-gap: $col-gap;
+}
+
+// Creates a grid container with configurable properties: rows, cols and an optional property: gap
+// $rows: defines the CSS property grid-template-rows
+// $cols: defines the CSS property grid-template-columns
+// Unused properties when including this mixin are omitted.
+@mixin grid($rows: auto, $cols: auto, $gap: null) {
+    display: grid;
+    grid-template-rows: $rows;
+    grid-template-columns: $cols;
+    gap: $gap;
+}
+
+// POSITIONING
+// Use this mixin to set the position property of an element along with optional direction properties: top, right, bottom, left
+@mixin position(
+    $type: static,
+    $top: null,
+    $right: null,
+    $bottom: null,
+    $left: null
+) {
+    position: $type;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+}
+
+// RESPONSIVENESS
+// Use this mixin to specify styling for specific breakpoints
+// Expected arguments: 'md' or 'lg'
+@mixin respond-to($breakpoint) {
+    @each $key, $val in v.$breakpoints {
+        @if $breakpoint == $key {
+            @media (min-width: $val) {
+                @content;
+            }
+        }
+    }
+}
+
+// TYPOGRAPHY
+// Use this mixin to set optional properties related to fonts.
+// Use only the needed properties, unused properties are omitted.
+@mixin typography(
+    $size: null,
+    $weight: null,
+    $family: null,
+    $line-height: null,
+    $color: null
+) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+    line-height: $line-height;
+    color: $color;
+}

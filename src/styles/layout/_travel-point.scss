@@ -1,0 +1,81 @@
+@use '../abstracts' as *;
+@use '../base/typography' as *;
+@use '../themes/default' as theme;
+@use 'sass:map';
+
+.travel-point {
+    @include flex($direction: column, $row-gap: rem(32px));
+
+    max-width: rem(1440px);
+    margin-inline: auto;
+
+    @include respond-to('lg') {
+        @include flex($direction: row, $align: center);
+    }
+
+    &__illustration {
+        flex: 1.8;
+    }
+
+    &__content {
+        flex: 1;
+        padding-inline: rem(40px);
+        @include flex($direction: column, $row-gap: rem(32px));
+
+        @include respond-to('md') {
+            padding-inline: unset;
+            @include flex($direction: column, $row-gap: rem(64px));
+        }
+    }
+
+    &__text-content {
+        @include flex($direction: column, $row-gap: rem(32px));
+    }
+
+    &__header {
+        @include flex($direction: column, $row-gap: rem(16px));
+    }
+
+    &__description {
+        @include typography(
+            $size: map.get($fs-text, 'sm'),
+            $weight: $fw-text,
+            $family: $ff-text,
+            $line-height: 1.6,
+            $color: theme.$text-color-base
+        );
+        text-align: center;
+
+        @include respond-to('md') {
+            @include typography($size: map.get($fs-text, 'md'));
+        }
+
+        @include respond-to('lg') {
+            text-align: start;
+            @include typography($size: map.get($fs-text, 'lg'));
+        }
+    }
+
+    &__cards {
+        @include grid($cols: 1fr, $gap: rem(16px));
+
+        @include position($type: relative);
+
+        @include respond-to('md') {
+            @include grid($cols: repeat(2, 1fr), $gap: rem(32px));
+        }
+    }
+
+    &__floater {
+        display: none;
+        box-shadow: none;
+        @include position($type: absolute, $right: 0, $top: 0);
+
+        transform: translate(50%, -50%);
+        background-color: $yellow-400;
+
+        @include respond-to('lg') {
+            display: block;
+        }
+    }
+}

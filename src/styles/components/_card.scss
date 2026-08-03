@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+@use '../base/typography' as *;
+@use '../themes/default' as theme;
+
+.card {
+    @include flex($direction: column, $justify: center, $row-gap: 1rem);
+    padding: rem(32px);
+    border-radius: $border-radius-lg;
+    border: 1px solid theme.$border-color;
+
+    &__value {
+        @include typography(
+            $family: $ff-subheading,
+            $weight: $fw-card-value,
+            $size: $fs-650,
+            $color: theme.$brand-color-tertiary,
+            $line-height: 1.2
+        );
+        text-align: center;
+    }
+
+    &__label {
+        @include typography(
+            $family: $ff-text,
+            $weight: $fw-text,
+            $size: rem(18px),
+            $line-height: $line-height-text,
+            $color: theme.$text-color-base
+        );
+        text-align: center;
+    }
+}

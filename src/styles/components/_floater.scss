@@ -13,6 +13,7 @@
     padding: rem(8px);
 
     @include respond-to('md') {
+        padding: rem(16px);
         font-size: rem(32px);
     }
 

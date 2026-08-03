@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+@use '../themes/default' as theme;
+@use 'sass:map';
+
+.eyebrow {
+    @include typography(
+        $family: $ff-subheading,
+        $size: map.get($fs-eyebrow-header, 'sm'),
+        $weight: $fw-subheading,
+        $line-height: 1.2,
+        $color: theme.$brand-color-secondary
+    );
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-align: center;
+
+    @include respond-to('md') {
+        @include typography($size: map.get($fs-eyebrow-header, 'md'));
+    }
+
+    @include respond-to('lg') {
+        @include typography($size: map.get($fs-eyebrow-header, 'lg'));
+        text-align: start;
+    }
+}

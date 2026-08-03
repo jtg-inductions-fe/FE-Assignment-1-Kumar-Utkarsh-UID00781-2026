@@ -17,3 +17,14 @@ const headerMenuLinksHtml = data.navbar.links
     })
     .join('');
 headerMenuLinksList.innerHTML = headerMenuLinksHtml;
+
+// Travel Point Cards
+const cardsContainer = document.querySelector('.travel-point__cards');
+
+const cardsHTML = data.travelpoint.cards
+    .map(({ value, label }) => {
+        return `<article class="travel-point__card card"><p class="card__value">${value}</p><p class="card__label">${label}</p></article>`;
+    })
+    .join('');
+
+cardsContainer.innerHTML = cardsHTML;

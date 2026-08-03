@@ -6,7 +6,6 @@
 .header {
     padding-block: rem(16px);
     z-index: 10;
-    background-color: theme.$bg-color;
     @include flex($justify: space-between, $align: center, $col-gap: 1rem);
 
     @include position(sticky, 0px);

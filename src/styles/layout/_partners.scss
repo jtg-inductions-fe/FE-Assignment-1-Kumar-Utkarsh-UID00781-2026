@@ -8,6 +8,7 @@
         $row-gap: rem(32px),
         $col-gap: rem(28px)
     );
+
     padding-block: rem(32px);
 
     @include respond-to('md') {

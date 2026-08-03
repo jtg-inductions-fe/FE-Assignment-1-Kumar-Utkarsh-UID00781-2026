@@ -28,7 +28,7 @@
         @include typography($family: $ff-button, $weight: $fw-button);
         font-size: rem(8px);
         color: $neutral-100;
-        padding: rem(8px 16px);
+        padding: rem(8px, 16px);
         [class^='icon-'],
         [class*=' icon-'] {
             font-size: rem(24px);

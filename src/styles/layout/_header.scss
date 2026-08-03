@@ -4,18 +4,20 @@
 @use 'sass:map';
 
 .header {
-    padding-block: 1em;
+    padding-block: rem(16px);
     background-color: theme.$bg-color;
     @include flex($justify: space-between, $align: center, $col-gap: 1rem);
+
     @include position(sticky, 0px);
+
     @include respond-to('lg') {
-        padding-block: 2rem;
+        padding-block: rem(32px);
         @include position(sticky);
     }
 
     &.container {
         @include respond-to('md') {
-            padding-inline: 1rem;
+            padding-inline: rem(16px);
         }
 
         @include respond-to('lg') {
@@ -28,7 +30,7 @@
         height: 1px;
         width: 1px;
         overflow: hidden;
-        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: rect(1px, 1px, 1px, 1px);
         color: theme.$brand-color-primary;
 
         &:focus {
@@ -44,33 +46,35 @@
 
         @include respond-to('md') {
             @include position(absolute, $right: 50%);
-            transform: translateX(-50%);
+
+            transform: translateX(50%);
         }
 
         @include respond-to('lg') {
             @include position(static);
+
             transform: translateX(0%);
         }
     }
 
     &__toggle-btn {
         background-color: theme.$brand-color-primary;
-        padding: 0.5rem;
+        padding: rem(8px);
         color: $neutral-100;
-        font-size: 2rem;
-        border-radius: 0.5rem;
+        font-size: rem(32px);
+        border-radius: rem(8px);
         z-index: 1000;
 
         &__line {
             background-color: $neutral-100;
-            width: 32px;
-            height: 4px;
-            border-radius: 100px;
+            width: rem(32px);
+            height: rem(4px);
+            border-radius: $border-radius-full;
             transition: 0.3s;
         }
 
         &__line + &__line {
-            margin-top: 8px;
+            margin-top: rem(8px);
         }
 
         &.open {
@@ -101,19 +105,21 @@
 
     &__menu {
         @include position($type: fixed, $top: 0, $left: -100vw);
+
         background-color: white;
         height: 100dvh;
         opacity: 0;
-        padding-top: 6.5rem;
+        padding-top: rem(104px);
         transition: 0.3s;
         z-index: 100;
-        @include shadow($shadow-md, $shadow-lg);
+        box-shadow: $shadow-md, $shadow-lg;
         @include respond-to('lg') {
             display: none;
         }
 
         &.active {
             @include position($type: fixed, $top: 0, $left: 0);
+
             width: 100%;
             opacity: 1;
 
@@ -134,6 +140,7 @@
                     $size: map.get($fs-nav-link, 'sm'),
                     $weight: $fw-text
                 );
+
                 font-weight: $fw-button;
                 padding: 1em 2em;
                 text-align: center;
@@ -155,9 +162,11 @@
 
         &__actions {
             @include position(absolute, $bottom: 2rem);
+
             @include flex($direction: column, $row-gap: 1rem);
+
             width: 100%;
-            padding: 2rem 4rem;
+            padding: rem(32px, 64px);
 
             @include respond-to('md') {
                 display: none;
@@ -179,7 +188,7 @@
 
             a {
                 color: theme.$text-color-base;
-                padding: 0.75rem 1rem;
+                padding: rem(12px, 16px);
                 text-decoration: none;
                 &:hover {
                     color: theme.$brand-color-primary;

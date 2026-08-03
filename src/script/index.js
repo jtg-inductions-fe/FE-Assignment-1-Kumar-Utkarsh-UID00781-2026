@@ -6,10 +6,19 @@ const headerMenu = document.querySelector('.header__menu');
 const toggleBtn = document.querySelector('.header__toggle-btn');
 
 // Functions for Enabling and Disabling scroll when menu is open
+/**
+ * Prevents default behaviour of the passed event when called.
+ * @param {Event} e
+ * @returns {null}
+ */
 function preventDefault(e) {
     e.preventDefault();
 }
 
+/**
+ * Prevents touchmove and wheel event default behaviour when called.
+ * @returns {null}
+ */
 function disableScroll() {
     body.addEventListener('touchmove', preventDefault, {
         passive: false,
@@ -19,6 +28,10 @@ function disableScroll() {
     });
 }
 
+/**
+ * Removes the eventListener which prevents touchmove and wheel event default behaviour.
+ * @returns {null}
+ */
 function enableScroll() {
     body.removeEventListener('touchmove', preventDefault);
     body.removeEventListener('wheel', preventDefault);

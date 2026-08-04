@@ -1,0 +1,69 @@
+@use '../abstracts' as *;
+@use '../themes/default' as theme;
+
+.splide {
+    @include flex($direction: column, $row-gap: rem(56px));
+
+    &.is-focus-in {
+        .splide__arrow {
+            &:focus {
+                outline: 2px dashed theme.$brand-color-primary;
+                outline-offset: 2px;
+            }
+        }
+
+        .splide__pagination__page {
+            &:focus {
+                outline: 2px dashed theme.$brand-color-primary;
+                outline-offset: 2px;
+            }
+        }
+    }
+
+    &__arrow {
+        @include flex($direction: row, $justify: center, $align: center);
+
+        width: rem(64px);
+        height: rem(64px);
+        padding: rem(24px);
+        border: 1px solid theme.$border-color;
+        background: theme.$bg-color;
+        color: theme.$text-color-base;
+        transition: all 0.15s;
+
+        &:hover {
+            background-color: theme.$brand-color-primary;
+            color: white;
+            box-shadow: $shadow-md;
+        }
+
+        &:disabled {
+            opacity: unset;
+        }
+
+        @include respond-to('md') {
+            height: rem(100px);
+            width: rem(100px);
+        }
+    }
+
+    &__pagination {
+        @include flex($col-gap: rem(24px));
+
+        @include position($type: static);
+
+        background: none;
+
+        &__page {
+            opacity: 1;
+            width: rem(24px);
+            height: rem(24px);
+            background-color: $neutral-200;
+
+            &.is-active {
+                transform: unset;
+                background: theme.$brand-color-secondary;
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@
 
 .card {
     @include flex($direction: column, $justify: center, $row-gap: 1rem);
+
     padding: rem(32px);
     border-radius: $border-radius-lg;
     border: 1px solid theme.$border-color;
@@ -16,6 +17,7 @@
             $color: theme.$brand-color-tertiary,
             $line-height: 1.2
         );
+
         text-align: center;
     }
 
@@ -27,6 +29,7 @@
             $line-height: $line-height-text,
             $color: theme.$text-color-base
         );
+
         text-align: center;
     }
 }

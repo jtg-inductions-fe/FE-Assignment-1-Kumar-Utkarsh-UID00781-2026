@@ -21,10 +21,10 @@ headerMenuLinksList.innerHTML = headerMenuLinksHtml;
 // Travel Point Cards
 const cardsContainer = document.querySelector('.travel-point__cards');
 
-const cardsHTML = data.travelpoint.cards
+let cardsHTML = data.travelpoint.cards
     .map(({ value, label }) => {
         return `<article class="travel-point__card card"><p class="card__value">${value}</p><p class="card__label">${label}</p></article>`;
     })
     .join('');
-
+cardsHTML += '<div class="travel-point__floater floater icon-ticket"></div>';
 cardsContainer.innerHTML = cardsHTML;

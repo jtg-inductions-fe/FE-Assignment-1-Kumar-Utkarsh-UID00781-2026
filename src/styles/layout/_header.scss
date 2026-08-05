@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+@use '../themes/default' as theme;
+@use 'sass:map';
+
+.header {
+    @include flex($justify: space-between, $align: center, $col-gap: 1rem);
+
+    @include position(sticky, 0px);
+    backdrop-filter: blur(10px);
+    padding-block: rem(16px);
+    background-color: rgba(theme.$bg-color, 0.8);
+
+    &__skip-link {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip-path: rect(1px, 1px, 1px, 1px);
+        color: theme.$brand-color-primary;
+
+        &:focus {
+            position: unset !important;
+            height: auto;
+            width: auto;
+            overflow: auto;
+        }
+    }
+
+    &__logo {
+        width: rem(40px);
+    }
+
+    &__actions {
+        display: none;
+    }
+
+    @include respond-to('md') {
+        padding-inline: rem(16px);
+
+        &__logo {
+            @include position(absolute, $right: 50%);
+
+            transform: translateX(50%);
+        }
+
+        &__actions {
+            @include flex(row, center, center, nowrap, 0, 1rem);
+        }
+    }
+
+    @include respond-to('lg') {
+        padding: rem(40px, 32px);
+
+        &__logo {
+            @include position(static);
+
+            transform: translateX(0%);
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+@use '../themes/default' as theme;
+
+.toggle-btn {
+    @include flex($direction: column, $row-gap: rem(8px));
+
+    background-color: theme.$brand-color-primary;
+    padding: rem(8px);
+    color: $neutral-100;
+    font-size: rem(32px);
+    border-radius: rem(8px);
+    z-index: 1000;
+
+    &__line {
+        background-color: $neutral-100;
+        width: rem(32px);
+        height: rem(4px);
+        border-radius: $border-radius-full;
+        transition: 0.3s;
+    }
+
+    &--open {
+        #line-1 {
+            // Magic Number: Translate down since line rotates in place. 12px = 2px within line-1 + 8px margin between line + 2px within middle line-2 to reach origin
+            transform: translateY(12px) rotate(45deg);
+        }
+
+        #line-2 {
+            transform: translateX(1rem);
+            width: 1px;
+        }
+
+        #line-3 {
+            // Magic Number: Translate up since line rotates in place. 12px for the same reason as line-1
+            transform: translateY(-12px) rotate(-45deg);
+        }
+    }
+
+    @include respond-to('md') {
+        order: -2;
+    }
+
+    @include respond-to('lg') {
+        display: none;
+    }
+}

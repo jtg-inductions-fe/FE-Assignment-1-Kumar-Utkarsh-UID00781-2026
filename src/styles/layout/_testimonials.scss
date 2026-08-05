@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+@use '../themes/default' as theme;
+
+.testimonials {
+    @include flex($direction: column, $row-gap: rem(56px));
+
+    @include position($type: relative);
+    overflow: clip;
+    padding-block: rem(64px);
+
+    &__header {
+        @include flex($direction: column, $row-gap: 1rem);
+    }
+    &__eyebrow {
+        text-align: center;
+    }
+    &__section-heading {
+        text-align: center;
+    }
+    &__background-img {
+        @include position($type: absolute, $top: 50%, $left: 50%);
+
+        display: none;
+        z-index: -10;
+        transform: translate(-50%, -50%) rotate(-9deg);
+        width: 2560px;
+        max-width: none;
+
+        @include respond-to('md') {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.rating {
+    @include flex($justify: center);
+
+    &__star {
+        font-size: rem(32px);
+        color: $yellow-400;
+        &--empty {
+            color: $neutral-300;
+        }
+    }
+    &__star + &__star {
+        margin-left: rem(16px);
+    }
+}

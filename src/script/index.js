@@ -1,15 +1,14 @@
 const body = document.body;
 
-// HEADER MENU INTERACTIONS
 // DOM Nodes
 const headerMenu = document.querySelector('.header__menu');
 const toggleBtn = document.querySelector('.header__toggle-btn');
 
+// HEADER MENU INTERACTIONS
 // Functions for Enabling and Disabling scroll when menu is open
 /**
  * Prevents default behaviour of the passed event when called.
  * @param {Event} e
- * @returns {null}
  */
 function preventDefault(e) {
     e.preventDefault();
@@ -17,7 +16,6 @@ function preventDefault(e) {
 
 /**
  * Prevents touchmove and wheel event default behaviour when called.
- * @returns {null}
  */
 function disableScroll() {
     body.addEventListener('touchmove', preventDefault, {
@@ -30,7 +28,6 @@ function disableScroll() {
 
 /**
  * Removes the eventListener which prevents touchmove and wheel event default behaviour.
- * @returns {null}
  */
 function enableScroll() {
     body.removeEventListener('touchmove', preventDefault);
@@ -39,9 +36,9 @@ function enableScroll() {
 
 // Adding and Closing menu from toggle button
 toggleBtn.addEventListener('click', () => {
-    toggleBtn.classList.toggle('open');
-    headerMenu.classList.toggle('active');
-    if (headerMenu.classList.contains('active')) {
+    toggleBtn.classList.toggle('toggle-btn--open');
+    headerMenu.classList.toggle('menu--active');
+    if (headerMenu.classList.contains('menu--active')) {
         disableScroll();
         toggleBtn.ariaExpanded = true;
         toggleBtn.ariaLabel = 'Close menu';
@@ -60,8 +57,8 @@ body.addEventListener('click', (e) => {
         enableScroll();
         toggleBtn.ariaExpanded = false;
         toggleBtn.ariaLabel = 'Open menu';
-        toggleBtn.classList.remove('open');
-        headerMenu.classList.remove('active');
+        toggleBtn.classList.remove('toggle-btn--open');
+        headerMenu.classList.remove('menu--active');
         headerMenu.inert = true;
     }
 });

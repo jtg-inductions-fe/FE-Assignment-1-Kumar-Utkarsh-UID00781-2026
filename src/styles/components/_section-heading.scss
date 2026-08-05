@@ -12,14 +12,14 @@
         $color: theme.$heading-color
     );
 
+    &--accent {
+        color: theme.$heading-color-accent;
+    }
+
     @include respond-to('md') {
         font-size: map.get($fs-section-heading, 'md');
     }
     @include respond-to('lg') {
         font-size: map.get($fs-section-heading, 'lg');
-    }
-
-    &--accent {
-        color: theme.$heading-color-accent;
     }
 }

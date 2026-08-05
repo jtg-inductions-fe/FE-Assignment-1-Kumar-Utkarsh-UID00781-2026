@@ -35,6 +35,9 @@
         background-color: theme.$bg-color;
         color: $neutral-900;
     }
+    &--shadow {
+        box-shadow: $shadow-sm, $shadow-md;
+    }
     &--bordered {
         border: 1px solid $neutral-200;
     }

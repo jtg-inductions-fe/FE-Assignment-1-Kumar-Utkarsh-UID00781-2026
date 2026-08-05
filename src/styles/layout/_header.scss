@@ -4,26 +4,14 @@
 @use 'sass:map';
 
 .header {
+    @include flex($justify: space-between, $align: center, $col-gap: 1rem);
+  
+    @include position(sticky, 0px);
+  
     padding-block: rem(16px);
     z-index: 10;
-    @include flex($justify: space-between, $align: center, $col-gap: 1rem);
-
-    @include position(sticky, 0px);
-
-    @include respond-to('lg') {
-        padding-block: rem(32px);
-        @include position(sticky);
-    }
-
-    &.container {
-        @include respond-to('md') {
-            padding-inline: rem(16px);
-        }
-
-        @include respond-to('lg') {
-            padding-inline: rem(40px);
-        }
-    }
+    backdrop-filter: blur(10px);
+    background-color: rgba(theme.$bg-color, 0.8);
 
     &__skip-link {
         position: absolute !important;
@@ -43,24 +31,33 @@
 
     &__logo {
         width: rem(40px);
+    }
 
-        @include respond-to('md') {
+    &__actions {
+        display: none;
+    }
+
+    @include respond-to('md') {
+        padding-inline: rem(16px);
+
+        &__logo {
             @include position(absolute, $right: 50%);
 
             transform: translateX(50%);
         }
 
-        @include respond-to('lg') {
-            @include position(static);
-
-            transform: translateX(0%);
+        &__actions {
+            @include flex(row, center, center, nowrap, 0, 1rem);
         }
     }
 
-    &__actions {
-        display: none;
-        @include respond-to('md') {
-            @include flex(row, center, center, nowrap, 0, 1rem);
+    @include respond-to('lg') {
+        padding: rem(40px, 32px);
+
+        &__logo {
+            @include position(static);
+
+            transform: translateX(0%);
         }
     }
 }

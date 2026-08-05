@@ -12,10 +12,6 @@
     width: fit-content;
     padding: rem(8px);
 
-    @include respond-to('md') {
-        font-size: rem(32px);
-    }
-
     &--text {
         @include flex(
             $direction: row,
@@ -33,16 +29,22 @@
         [class*=' icon-'] {
             font-size: rem(24px);
         }
+    }
 
-        @include respond-to('md') {
+    @include respond-to('md') {
+        font-size: rem(32px);
+
+        &--text {
             font-size: map.get($fs-button, 'md');
             [class^='icon-'],
             [class*=' icon-'] {
                 font-size: rem(24px);
             }
         }
+    }
 
-        @include respond-to('lg') {
+    @include respond-to('lg') {
+        &--text {
             font-size: map.get($fs-button, 'lg');
             [class^='icon-'],
             [class*=' icon-'] {

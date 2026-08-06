@@ -12,10 +12,13 @@
         $color: theme.$heading-color
     );
 
+    text-align: center;
+
     @include respond-to('md') {
         font-size: map.get($fs-display-heading, 'md');
     }
     @include respond-to('lg') {
+        text-align: start;
         font-size: map.get($fs-display-heading, 'lg');
     }
 }

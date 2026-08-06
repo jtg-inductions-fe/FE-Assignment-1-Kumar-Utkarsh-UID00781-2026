@@ -9,23 +9,13 @@
     max-width: rem(1440px);
     margin-inline: auto;
 
-    @include respond-to('lg') {
-        @include flex($direction: row, $align: center);
-    }
-
     &__illustration {
-        flex: 1.8;
+        flex: 1;
     }
 
     &__content {
-        flex: 1;
         padding-inline: rem(40px);
         @include flex($direction: column, $row-gap: rem(32px));
-
-        @include respond-to('md') {
-            padding-inline: unset;
-            @include flex($direction: column, $row-gap: rem(64px));
-        }
     }
 
     &__text-content {
@@ -44,26 +34,13 @@
             $line-height: 1.6,
             $color: theme.$text-color-base
         );
+
         text-align: center;
-
-        @include respond-to('md') {
-            @include typography($size: map.get($fs-text, 'md'));
-        }
-
-        @include respond-to('lg') {
-            text-align: start;
-            @include typography($size: map.get($fs-text, 'lg'));
-        }
     }
 
     &__cards {
         @include grid($cols: 1fr, $gap: rem(16px));
-
         @include position($type: relative);
-
-        @include respond-to('md') {
-            @include grid($cols: repeat(2, 1fr), $gap: rem(32px));
-        }
     }
 
     &__floater {
@@ -73,8 +50,42 @@
 
         transform: translate(50%, -50%);
         background-color: $yellow-400;
+    }
 
-        @include respond-to('lg') {
+    @include respond-to('md') {
+        &__content {
+            padding-inline: unset;
+            @include flex($direction: column, $row-gap: rem(64px));
+        }
+
+        &__description {
+            @include typography($size: map.get($fs-text, 'md'));
+        }
+
+        &__cards {
+            @include grid($cols: repeat(2, 1fr), $gap: rem(32px));
+        }
+    }
+
+    @include respond-to('lg') {
+        @include flex($direction: row, $align: center);
+
+        &__content {
+            // MAGIC NUMBER: Padding of half of the yellow ticket floater's widht to prevent scroll
+            padding-right: rem(36px);
+            @include flex($direction: column, $row-gap: rem(64px));
+        }
+
+        &__illustration {
+            flex: 0 1 rem(768px);
+            width: 66.66%;
+        }
+
+        &__description {
+            text-align: start;
+            @include typography($size: map.get($fs-text, 'lg'));
+        }
+        &__floater {
             display: block;
         }
     }

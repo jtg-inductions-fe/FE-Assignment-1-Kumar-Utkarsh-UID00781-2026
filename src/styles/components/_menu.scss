@@ -17,15 +17,11 @@
         display: none;
     }
 
-    &.active {
+    &--active {
         @include position($type: fixed, $top: 0, $left: 0);
 
         width: 100%;
         opacity: 1;
-
-        @include respond-to('md') {
-            max-width: 30rem;
-        }
     }
 
     &__links {
@@ -33,30 +29,26 @@
     }
 
     &__link {
-        a {
-            color: theme.$text-color-dark;
-            display: block;
-            @include typography(
-                $size: map.get($fs-nav-link, 'sm'),
-                $weight: $fw-text
-            );
+        @include typography(
+            $size: map.get($fs-nav-link, 'sm'),
+            $weight: $fw-text
+        );
 
-            font-weight: $fw-button;
-            padding: 1em 2em;
-            text-align: center;
-            text-decoration: none;
-            width: 100%;
-            height: 100%;
-            &:hover {
-                color: theme.$brand-color-primary;
-            }
-            &:focus {
-                text-decoration: underline;
-            }
+        color: theme.$text-color-dark;
+        display: block;
+        font-weight: $fw-button;
+        padding: rem(24px, 48px);
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
 
-            @include respond-to('md') {
-                @include typography($size: map.get($fs-nav-link, 'md'));
-            }
+        &:hover {
+            color: theme.$brand-color-primary;
+        }
+
+        &:focus {
+            text-decoration: underline;
         }
     }
 
@@ -67,8 +59,18 @@
 
         width: 100%;
         padding: rem(32px, 64px);
+    }
 
-        @include respond-to('md') {
+    @include respond-to('md') {
+        &--active {
+            max-width: rem(480px);
+        }
+
+        &__link {
+            @include typography($size: map.get($fs-nav-link, 'md'));
+        }
+
+        &__actions {
             display: none;
         }
     }

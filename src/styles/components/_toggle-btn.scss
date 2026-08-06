@@ -2,6 +2,8 @@
 @use '../themes/default' as theme;
 
 .toggle-btn {
+    @include flex($direction: column, $row-gap: rem(8px));
+
     background-color: theme.$brand-color-primary;
     padding: rem(8px);
     color: $neutral-100;
@@ -17,11 +19,7 @@
         transition: 0.3s;
     }
 
-    &__line + &__line {
-        margin-top: rem(8px);
-    }
-
-    &.open {
+    &--open {
         #line-1 {
             // Magic Number: Translate down since line rotates in place. 12px = 2px within line-1 + 8px margin between line + 2px within middle line-2 to reach origin
             transform: translateY(12px) rotate(45deg);

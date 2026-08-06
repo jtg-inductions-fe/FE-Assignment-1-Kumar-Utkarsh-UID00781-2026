@@ -1,0 +1,129 @@
+@use '../abstracts' as *;
+@use '../base/typography' as *;
+@use '../themes/default' as theme;
+@use 'sass:map';
+
+.footer {
+    @include flex($direction: column, $row-gap: rem(64px));
+
+    padding: rem(64px, 32px);
+
+    &__brand {
+        @include flex($direction: column, $row-gap: rem(32px));
+    }
+    &__brand-text {
+        @include flex($direction: column, $row-gap: rem(32px));
+    }
+    &__logo {
+        @include flex($align: center, $col-gap: rem(16px));
+    }
+    &__logo-text {
+        @include typography(
+            $size: rem(24px),
+            $weight: 900,
+            $family: $ff-heading
+        );
+    }
+    &__text {
+        @include typography(
+            $size: map.get($fs-footer-text, 'sm'),
+            $weight: 450,
+            $family: $ff-text,
+            $line-height: $line-height-text,
+            $color: theme.$text-color-base
+        );
+    }
+    &__social-links {
+        @include flex($col-gap: rem(32px));
+    }
+    &__floater {
+        font-size: rem(24px);
+        box-shadow: none;
+    }
+    &__social-link {
+        text-decoration: none;
+    }
+    &__list {
+        @include flex($direction: column, $row-gap: rem(16px));
+    }
+    &__nav {
+        @include flex($direction: column, $row-gap: rem(64px));
+    }
+
+    &__heading {
+        display: none;
+    }
+
+    &__link {
+        @include typography(
+            $size: map.get($fs-text, 'sm'),
+            $weight: $fw-text,
+            $family: $ff-text,
+            $color: theme.$text-color-base
+        );
+
+        text-decoration: none;
+    }
+
+    @include respond-to('md') {
+        padding: rem(0px, 32px);
+        &__text {
+            @include typography($size: map.get($fs-footer-text, 'md'));
+        }
+        &__nav {
+            @include flex(
+                $direction: row,
+                $justify: space-between,
+                $col-gap: rem(24px)
+            );
+        }
+        &__group {
+            @include flex($row-gap: rem(32px));
+        }
+        &__list {
+            @include flex($row-gap: rem(32px));
+        }
+        &__link {
+            @include typography($size: map.get($fs-text, 'md'));
+        }
+        &__accordion-toggle {
+            pointer-events: none;
+        }
+        &__icon-container {
+            display: none;
+        }
+        &__links {
+            @include grid($rows: 1fr);
+        }
+    }
+
+    @include respond-to('lg') {
+        padding: rem(0px, 32px);
+        @include flex(
+            $direction: row,
+            $justify: space-between,
+            $col-gap: rem(64px)
+        );
+
+        &__brand {
+            max-width: rem(560px);
+            @include flex($direction: column, $row-gap: rem(64px));
+        }
+
+        &__text {
+            @include typography($size: map.get($fs-footer-text, 'lg'));
+        }
+
+        &__nav {
+            @include flex(
+                $direction: row,
+                $justify: space-between,
+                $col-gap: rem(32px)
+            );
+        }
+
+        &__link {
+            @include typography($size: map.get($fs-text, 'lg'));
+        }
+    }
+}

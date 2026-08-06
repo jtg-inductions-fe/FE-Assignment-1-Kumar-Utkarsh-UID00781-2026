@@ -3,6 +3,7 @@ const body = document.body;
 // DOM Nodes
 const headerMenu = document.querySelector('.header__menu');
 const toggleBtn = document.querySelector('.header__toggle-btn');
+const accordions = document.querySelectorAll('.accordion');
 
 // HEADER MENU INTERACTIONS
 // Functions for Enabling and Disabling scroll when menu is open
@@ -61,4 +62,24 @@ body.addEventListener('click', (e) => {
         headerMenu.classList.remove('menu--active');
         headerMenu.inert = true;
     }
+});
+
+// Accordion
+accordions.forEach((accordion) => {
+    const toggle = accordion.querySelector('.accordion__toggle');
+    const content = accordion.querySelector('.accordion__content');
+    const icon = accordion.querySelector('.accordion__icon');
+
+    toggle.addEventListener('click', () => {
+        content.classList.toggle('accordion__content--active');
+        icon.classList.toggle('accordion__icon--active');
+
+        if (content.classList.contains('accordion__content--active')) {
+            toggle.ariaExpanded = true;
+            toggle.ariaLabel = 'Close accordion';
+        } else {
+            toggle.ariaExpanded = false;
+            toggle.ariaLabel = 'Open accordion';
+        }
+    });
 });

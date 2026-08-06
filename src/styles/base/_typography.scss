@@ -44,6 +44,12 @@ $fs-testimonial-text: (
     'lg': $fs-500,
 );
 
+$fs-footer-text: (
+    'sm': $fs-400,
+    'md': $fs-500,
+    'lg': $fs-500,
+);
+
 body {
     line-height: $line-height-text;
     font-family: $ff-text;

@@ -176,7 +176,7 @@
                     class="partners__partner-img"
                 />
             </div>
-            <section class="travel-point">
+            <section id="about" class="travel-point">
                 <img
                     src="/assets/images/travelpoint-img.png"
                     alt="A girl ready  to travel"
@@ -366,18 +366,20 @@
                                     </div>
                                 </li>
                             </ul>
-                            <div class="splide__arrows">
-                                <button
-                                    class="splide__arrow splide__arrow--prev button button--secondary button-border"
-                                >
-                                    <span class="icon-arrow-left2"></span>
-                                </button>
-                                <button
-                                    class="splide__arrow splide__arrow--next button"
-                                >
-                                    <span class="icon-arrow-right2"></span>
-                                </button>
-                            </div>
+                        </div>
+                        <div class="splide__arrows">
+                            <button
+                                type="button"
+                                class="splide__arrow splide__arrow--prev button button--secondary button-border"
+                            >
+                                <span class="icon-arrow-left2"></span>
+                            </button>
+                            <button
+                                type="button"
+                                class="splide__arrow splide__arrow--next button"
+                            >
+                                <span class="icon-arrow-right2"></span>
+                            </button>
                         </div>
                         <ul class="splide__pagination"></ul>
                     </section>
@@ -408,24 +410,24 @@
                     </p>
                 </div>
                 <ul class="footer__social-links">
-                    <li class="footer__floater floater icon-facebook">
+                    <li>
                         <a
                             href="https://www.facebook.com"
-                            class="footer__social-link"
+                            class="footer__social-link floater icon-facebook"
                             aria-label="Visit Travlog on Facebook"
                         ></a>
                     </li>
-                    <li class="footer__floater floater icon-twitter">
+                    <li>
                         <a
                             href="https://www.x.com"
-                            class="footer__social-link"
+                            class="footer__social-link floater icon-twitter"
                             aria-label="Visit Travlog on Twitter"
                         ></a>
                     </li>
-                    <li class="footer__floater floater icon-instagram">
+                    <li>
                         <a
                             href="https://www.instagram.com"
-                            class="footer__social-link"
+                            class="footer__social-link floater icon-instagram"
                             aria-label="Visit Travlog on Instagram"
                         ></a>
                     </li>
@@ -438,26 +440,37 @@
                         class="accordion__toggle footer__accordion-toggle"
                         type="button"
                         aria-expanded="false"
+                        aria-label="Open Company accordion"
                         aria-controls="company-links"
                     >
                         <span class="accordion__label">Company</span>
-                        <div
+                        <span
                             class="accordion__icon-container footer__icon-container"
                         >
                             <span
                                 class="accordion__icon icon-chevron-down"
                                 aria-hidden="true"
                             ></span>
-                        </div>
+                        </span>
                     </button>
                     <div
                         class="accordion__content footer__links"
                         id="company-links"
                     >
                         <ul class="footer__list">
-                            <li><a href="" class="footer__link">About</a></li>
-                            <li><a href="" class="footer__link">Career</a></li>
-                            <li><a href="" class="footer__link">Mobile</a></li>
+                            <li>
+                                <a href="#about" class="footer__link">About</a>
+                            </li>
+                            <li>
+                                <a href="/career" class="footer__link"
+                                    >Career</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/mobile" class="footer__link"
+                                    >Mobile</a
+                                >
+                            </li>
                         </ul>
                     </div>
                 </section>
@@ -467,18 +480,18 @@
                         class="accordion__toggle footer__accordion-toggle"
                         type="button"
                         aria-expanded="false"
-                        aria-label="Open accordion"
+                        aria-label="Open Contact accordion"
                         aria-controls="contact-links"
                     >
                         <span class="accordion__label">Contact</span>
-                        <div
+                        <span
                             class="accordion__icon-container footer__icon-container"
                         >
                             <span
                                 class="accordion__icon icon-chevron-down"
                                 aria-hidden="true"
                             ></span>
-                        </div>
+                        </span>
                     </button>
                     <div
                         class="accordion__content footer__links"
@@ -486,15 +499,21 @@
                     >
                         <ul class="footer__list">
                             <li>
-                                <a href="" class="footer__link">Why Travlog?</a>
+                                <a href="#about" class="footer__link"
+                                    >Why Travlog?</a
+                                >
                             </li>
                             <li>
-                                <a href="" class="footer__link"
+                                <a href="/partner" class="footer__link"
                                     >Partner with us</a
                                 >
                             </li>
-                            <li><a href="" class="footer__link">FAQs</a></li>
-                            <li><a href="" class="footer__link">Blog</a></li>
+                            <li>
+                                <a href="/faq" class="footer__link">FAQs</a>
+                            </li>
+                            <li>
+                                <a href="/blog" class="footer__link">Blog</a>
+                            </li>
                         </ul>
                     </div>
                 </section>
@@ -504,18 +523,18 @@
                         class="accordion__toggle footer__accordion-toggle"
                         type="button"
                         aria-expanded="false"
-                        aria-label="Open accordion"
+                        aria-label="Open Meet us accordion"
                         aria-controls="meet-us-links"
                     >
                         <span class="accordion__label">Meet us</span>
-                        <div
+                        <span
                             class="accordion__icon-container footer__icon-container"
                         >
                             <span
                                 class="accordion__icon icon-chevron-down"
                                 aria-hidden="true"
                             ></span>
-                        </div>
+                        </span>
                     </button>
                     <div
                         class="accordion__content footer__links"
@@ -537,7 +556,9 @@
                                 >
                             </li>
                             <li>
-                                <a href="" class="footer__link"
+                                <a
+                                    href="https://www.google.com/maps/place/R+St,+Bronx,+NY+10473,+USA/@40.8061912,-73.8601657,17z/data=!3m1!4b1!4m6!3m5!1s0x89c2f53b32fec2cd:0x17925382d33f7a!8m2!3d40.8061872!4d-73.8575908!16s%2Fg%2F1tfcp8bd?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D"
+                                    class="footer__link"
                                     >205. R Street, New York <br />BD23200</a
                                 >
                             </li>

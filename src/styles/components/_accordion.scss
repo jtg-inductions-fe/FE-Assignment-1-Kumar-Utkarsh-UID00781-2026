@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 @use '../base/typography' as *;
 @use '../themes/default' as theme;
-// @use 'sass:map';
 
 .accordion {
     @include flex($direction: column, $row-gap: rem(20px));

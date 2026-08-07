@@ -38,7 +38,7 @@
         }
 
         &:disabled {
-            opacity: unset;
+            opacity: 100%;
         }
 
         @include respond-to('md') {

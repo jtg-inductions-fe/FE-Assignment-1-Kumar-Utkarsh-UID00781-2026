@@ -183,10 +183,8 @@ body {
     min-height: 100vh;
     height: 100%;
     margin: 0;
-
-    @include respond-to('lg') {
-        // padding-block: 2rem;
-    }
+    font-family: $ff-text;
+    -webkit-font-smoothing: antialiased;
 }
 
 input,

@@ -39,9 +39,13 @@
     &__floater {
         font-size: rem(24px);
         box-shadow: none;
+        height: fit-content;
     }
     &__social-link {
+        font-size: rem(24px);
+        box-shadow: none;
         text-decoration: none;
+        color: white;
     }
     &__list {
         @include flex($direction: column, $row-gap: rem(16px));
@@ -52,6 +56,11 @@
 
     &__heading {
         display: none;
+        @include typography(
+            $size: $fs-500,
+            $weight: $fw-heading,
+            $family: $ff-heading
+        );
     }
 
     &__link {
@@ -66,7 +75,7 @@
     }
 
     @include respond-to('md') {
-        padding: rem(0px, 32px);
+        padding: rem(64px, 32px);
         &__text {
             @include typography($size: map.get($fs-footer-text, 'md'));
         }
@@ -86,8 +95,11 @@
         &__link {
             @include typography($size: map.get($fs-text, 'md'));
         }
+        &__heading {
+            display: block;
+        }
         &__accordion-toggle {
-            pointer-events: none;
+            display: none;
         }
         &__icon-container {
             display: none;
@@ -95,10 +107,15 @@
         &__links {
             @include grid($rows: 1fr);
         }
+        &__social-link {
+            height: 100%;
+            width: 100%;
+        }
     }
 
     @include respond-to('lg') {
-        padding: rem(0px, 32px);
+        padding: rem(48px, 32px);
+        margin-top: 160px;
         @include flex(
             $direction: row,
             $justify: space-between,

@@ -10,7 +10,6 @@
         box-shadow 0.15s;
     backdrop-filter: blur(0px);
     z-index: 10;
-
     padding-block: rem(16px);
 
     &__content {
@@ -61,6 +60,7 @@
 
     @include respond-to('lg') {
         padding: rem(40px, 32px);
+        margin-top: rem(32px);
 
         &__logo {
             @include position(static);

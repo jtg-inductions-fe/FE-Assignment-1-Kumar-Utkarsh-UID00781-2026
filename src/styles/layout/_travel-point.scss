@@ -7,6 +7,7 @@
     @include flex($direction: column, $row-gap: rem(32px));
 
     max-width: rem(1440px);
+    padding-block: rem(64px);
     margin-inline: auto;
 
     @include respond-to('lg') {

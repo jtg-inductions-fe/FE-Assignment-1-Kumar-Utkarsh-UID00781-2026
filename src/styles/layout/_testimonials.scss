@@ -5,7 +5,7 @@
     @include flex($direction: column, $row-gap: rem(56px));
 
     @include position($type: relative);
-    overflow: clip;
+    overflow-x: clip;
     padding-block: rem(64px);
 
     &__header {
@@ -23,10 +23,12 @@
         display: none;
         z-index: -10;
         transform: translate(-50%, -50%) rotate(-9deg);
-        width: 2560px;
+        width: 120vw;
         max-width: none;
+    }
 
-        @include respond-to('md') {
+    @include respond-to('md') {
+        &__background-img {
             display: block;
         }
     }

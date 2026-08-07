@@ -6,16 +6,6 @@
 .testimonial {
     @include flex($direction: column, $align: center, $row-gap: rem(56px));
 
-    @include respond-to('md') {
-        margin-inline: auto;
-        max-width: rem(584px);
-    }
-
-    @include respond-to('lg') {
-        margin-inline: auto;
-        max-width: rem(880px);
-    }
-
     &__profile-img {
         aspect-ratio: 1 / 1;
         width: rem(128px);
@@ -57,12 +47,21 @@
             $line-height: $line-height-text,
             $color: theme.$text-color-base
         );
+    }
 
-        @include respond-to('md') {
+    @include respond-to('md') {
+        margin-inline: auto;
+        max-width: rem(584px);
+
+        &__text {
             @include typography($size: map.get($fs-testimonial-text, 'md'));
         }
+    }
+    @include respond-to('lg') {
+        margin-inline: auto;
+        max-width: rem(880px);
 
-        @include respond-to('lg') {
+        &__text {
             @include typography($size: map.get($fs-testimonial-text, 'lg'));
         }
     }

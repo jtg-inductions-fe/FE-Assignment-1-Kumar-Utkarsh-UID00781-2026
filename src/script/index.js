@@ -4,6 +4,16 @@ const body = document.body;
 const headerMenu = document.querySelector('.header__menu');
 const toggleBtn = document.querySelector('.header__toggle-btn');
 const accordions = document.querySelectorAll('.accordion');
+const header = document.querySelector('header');
+
+// HEADER SHADOW
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        header.classList.add('header--scrolled');
+    } else {
+        header.classList.remove('header--scrolled');
+    }
+});
 
 // HEADER MENU INTERACTIONS
 // Functions for Enabling and Disabling scroll when menu is open

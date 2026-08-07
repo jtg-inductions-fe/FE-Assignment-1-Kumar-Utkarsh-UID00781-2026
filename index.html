@@ -17,48 +17,54 @@
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
     <body>
-        <header class="header container">
-            <a href="#main-content" class="header__skip-link"
-                >Skip to main content</a
-            >
-            <img
-                class="header__logo"
-                src="/assets/images/company-logo.png"
-                alt="Travlog logo"
-            />
-            <nav class="header__nav nav" aria-label="Primary">
-                <ul class="nav__links">
-                    <!-- Rendered from JSON -->
-                </ul>
-            </nav>
-            <div class="header__actions">
-                <button type="button" class="btn btn--secondary">Login</button>
-                <button type="button" class="btn btn--primary">Sign up</button>
-            </div>
-            <button
-                type="button"
-                class="header__toggle-btn toggle-btn"
-                aria-label="Open primary navigation"
-                aria-expanded="false"
-                aria-controls="primary-nav-menu"
-            >
-                <div class="toggle-btn__line" id="line-1"></div>
-                <div class="toggle-btn__line" id="line-2"></div>
-                <div class="toggle-btn__line" id="line-3"></div>
-            </button>
-            <div id="primary-nav-menu" class="header__menu menu" inert>
-                <nav class="menu__nav" aria-label="Primary">
-                    <ul class="menu__links">
+        <header class="header">
+            <div class="header__content container">
+                <a href="#main-content" class="header__skip-link"
+                    >Skip to main content</a
+                >
+                <img
+                    class="header__logo"
+                    src="/assets/images/company-logo.png"
+                    alt="Travlog logo"
+                />
+                <nav class="header__nav nav" aria-label="Primary">
+                    <ul class="nav__links">
                         <!-- Rendered from JSON -->
                     </ul>
                 </nav>
-                <div class="menu__actions">
+                <div class="header__actions">
                     <button type="button" class="btn btn--secondary">
                         Login
                     </button>
                     <button type="button" class="btn btn--primary">
                         Sign up
                     </button>
+                </div>
+                <button
+                    type="button"
+                    class="header__toggle-btn toggle-btn"
+                    aria-label="Open primary navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-nav-menu"
+                >
+                    <div class="toggle-btn__line" id="line-1"></div>
+                    <div class="toggle-btn__line" id="line-2"></div>
+                    <div class="toggle-btn__line" id="line-3"></div>
+                </button>
+                <div id="primary-nav-menu" class="header__menu menu" inert>
+                    <nav class="menu__nav" aria-label="Primary">
+                        <ul class="menu__links">
+                            <!-- Rendered from JSON -->
+                        </ul>
+                    </nav>
+                    <div class="menu__actions">
+                        <button type="button" class="btn btn--secondary">
+                            Login
+                        </button>
+                        <button type="button" class="btn btn--primary">
+                            Sign up
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>

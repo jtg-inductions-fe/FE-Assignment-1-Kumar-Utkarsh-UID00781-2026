@@ -20,14 +20,6 @@ html {
    ========================================================================== */
 
 /**
- * Remove the margin in all browsers.
- */
-
-body {
-    margin: 0;
-}
-
-/**
  * Render the `main` element consistently in IE.
  */
 
@@ -190,9 +182,10 @@ html {
 body {
     min-height: 100vh;
     height: 100%;
+    margin: 0;
 
     @include respond-to('lg') {
-        padding-block: 2rem;
+        // padding-block: 2rem;
     }
 }
 

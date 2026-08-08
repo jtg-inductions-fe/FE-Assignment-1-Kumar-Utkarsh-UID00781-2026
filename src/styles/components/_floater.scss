@@ -34,7 +34,7 @@
     @include respond-to('md') {
         font-size: rem(32px);
         padding: rem(16px);
-      
+
         &--text {
             font-size: map.get($fs-button, 'md');
             [class^='icon-'],

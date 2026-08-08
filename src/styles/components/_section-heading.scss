@@ -12,6 +12,7 @@
         $color: theme.$heading-color
     );
 
+    text-align: center;
     &--accent {
         color: theme.$heading-color-accent;
     }
@@ -19,7 +20,9 @@
     @include respond-to('md') {
         font-size: map.get($fs-section-heading, 'md');
     }
+  
     @include respond-to('lg') {
+        text-align: start;
         font-size: map.get($fs-section-heading, 'lg');
     }
 }

@@ -21,10 +21,22 @@
     &--primary {
         background-color: theme.$brand-color-primary;
         color: $neutral-100;
+        &:hover {
+            background-color: theme.$brand-color-primary-light;
+        }
+        &:active {
+            background-color: theme.$brand-color-primary-dark;
+        }
     }
     &--secondary {
         background-color: theme.$bg-color;
         color: $neutral-900;
+        &:hover {
+            background-color: $neutral-200;
+        }
+        &:active {
+            background-color: $neutral-300;
+        }
     }
     &--bordered {
         border: 1px solid $neutral-200;

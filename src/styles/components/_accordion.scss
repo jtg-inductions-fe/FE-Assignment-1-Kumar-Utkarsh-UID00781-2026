@@ -36,13 +36,20 @@
     }
     &__content {
         @include grid($rows: 0fr);
-        transition: grid-template-rows 0.15s;
+
+        opacity: 0;
+        transition:
+            grid-template-rows 0.15s,
+            opacity 0.15s;
+
         > * {
             overflow: hidden;
         }
 
         &--active {
             @include grid($rows: 1fr);
+
+            opacity: 1;
         }
     }
 }

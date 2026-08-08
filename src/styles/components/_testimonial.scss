@@ -1,0 +1,68 @@
+@use '../abstracts' as *;
+@use '../themes/default' as theme;
+@use '../base' as *;
+@use 'sass:map';
+
+.testimonial {
+    @include flex($direction: column, $align: center, $row-gap: rem(56px));
+
+    &__profile-img {
+        aspect-ratio: 1 / 1;
+        width: rem(128px);
+        object-fit: cover;
+        object-position: center;
+        border-radius: $border-radius-full;
+    }
+
+    &__client-info {
+        text-align: center;
+    }
+
+    &__client-name {
+        @include typography(
+            $size: rem(28px),
+            $weight: $fw-subheading,
+            $family: $ff-subheading,
+            $line-height: 1.2,
+            $color: theme.$brand-color-tertiary
+        );
+    }
+
+    &__client-designation {
+        @include typography(
+            $size: rem(23px),
+            $weight: $fw-subheading,
+            $family: $ff-subheading,
+            $line-height: 1.2,
+            $color: theme.$text-color-dark
+        );
+    }
+
+    &__text {
+        text-align: center;
+        @include typography(
+            $size: map.get($fs-testimonial-text, 'sm'),
+            $family: $ff-text,
+            $weight: 450,
+            $line-height: $line-height-text,
+            $color: theme.$text-color-base
+        );
+    }
+
+    @include respond-to('md') {
+        margin-inline: auto;
+        max-width: rem(584px);
+
+        &__text {
+            @include typography($size: map.get($fs-testimonial-text, 'md'));
+        }
+    }
+    @include respond-to('lg') {
+        margin-inline: auto;
+        max-width: rem(880px);
+
+        &__text {
+            @include typography($size: map.get($fs-testimonial-text, 'lg'));
+        }
+    }
+}

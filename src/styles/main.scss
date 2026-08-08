@@ -1,9 +1,9 @@
 @charset 'utf-8';
 
+@use './vendors';
 @use './abstracts';
 @use './base';
 @use './components';
 @use './layout';
 @use './pages';
 @use './themes/default';
-@use './vendors';

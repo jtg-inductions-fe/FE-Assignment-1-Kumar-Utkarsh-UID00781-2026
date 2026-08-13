@@ -77,11 +77,15 @@ body.addEventListener('click', (e) => {
     }
 });
 
-// Accordion
-// Disable aria-* attributes when viewport is > 430px
-
-// Toggle attributes based on if viewport > 430px
-function toggleAriaAttributes(accordion, matchesTablet) {
+// ACCORDION
+/**
+ * Sets the inert attribute of an accordion on tablet and larger viewports.
+ * Reason: Accordion content is inert by default unless opened, accordion does not exist on larger viewports.
+ *
+ * @param {DOM Node} accordion
+ * @param {boolean} matchesTablet
+ */
+function toggleInertness(accordion, matchesTablet) {
     const accordionContent = accordion.querySelector('.accordion__content');
     if (matchesTablet) {
         accordionContent.inert = false;
@@ -90,22 +94,32 @@ function toggleAriaAttributes(accordion, matchesTablet) {
     }
 }
 
+/**
+ * Runs toggleInertness function over each accordion
+ * Passes the accordion DOM node and media query match boolean to each call
+ *
+ * @param {MediaQueryList Object} isTablet
+ */
 function changeAccordionState(isTablet) {
     accordions.forEach((accordion) => {
-        toggleAriaAttributes(accordion, isTablet.matches);
+        toggleInertness(accordion, isTablet.matches);
     });
 }
+
+// Fire changeAccordionState whenever viewport crosses tablet view
 isTablet.addEventListener('change', changeAccordionState);
+
+// Fire changeAccordionState once at startup
 changeAccordionState(isTablet);
 
+// Handle opening and closing of accordion
+// Handle aria-* attribute state and inertness of accordion content when opened / closed
 accordions.forEach((accordion) => {
     const toggle = accordion.querySelector('.accordion__toggle');
     const content = accordion.querySelector('.accordion__content');
     const icon = accordion.querySelector('.accordion__icon');
 
     toggle.addEventListener('click', () => {
-        if (isTablet.matches) return;
-
         content.classList.toggle('accordion__content--active');
         icon.classList.toggle('accordion__icon--active');
 

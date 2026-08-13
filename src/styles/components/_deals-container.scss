@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+.deals-container {
+    width: 100%;
+    margin-top: rem(10px);
+    @include flex($direction: column);
+    &--hidden {
+        display: none;
+    }
+}

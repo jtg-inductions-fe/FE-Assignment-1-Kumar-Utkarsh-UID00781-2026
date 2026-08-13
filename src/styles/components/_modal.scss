@@ -1,0 +1,129 @@
+@use '../abstracts' as *;
+@use '../themes/default' as theme;
+
+.modal {
+    max-width: rem(360px);
+    width: 100%;
+    padding: rem(24px);
+    margin-bottom: 0;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+    transform: translateY(100%);
+    transition:
+        // margin 0.3s ease-out allow-discrete,
+        transform 0.3s ease-out,
+        overlay 0.3s ease-out allow-discrete,
+        display 0.3s ease-out allow-discrete;
+
+    &:open {
+        transform: translateY(0);
+    }
+
+    @starting-style {
+        &:open {
+            transform: translateY(100%);
+            // margin-bottom: -100%;
+        }
+    }
+
+    &::backdrop {
+        background-color: rgba(black, 0.5);
+    }
+
+    &__close-btn {
+        @include position($type: absolute, $top: rem(16px), $right: rem(16px));
+
+        border-radius: $border-radius-full;
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    &__text {
+        @include flex($direction: column, $row-gap: rem(8px));
+    }
+    &__header {
+        @include flex($direction: column, $row-gap: rem(8px));
+    }
+
+    &__eyebrow {
+        @include typography(
+            $size: $fs-200,
+            $weight: $fw-modal-eyebrow,
+            $family: $ff-text,
+            $line-height: 1,
+            $color: theme.$brand-color-secondary-dark
+        );
+
+        @include flex($align: center, $justify: center, $col-gap: 2px);
+
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    &__heading {
+        @include typography(
+            $size: rem(20px),
+            $weight: $ff-modal-heading,
+            $family: $ff-text,
+            $line-height: 1
+        );
+        text-align: center;
+    }
+
+    &__description {
+        @include typography(
+            $size: $fs-200,
+            $family: $ff-text,
+            $line-height: 1,
+            $color: theme.$text-color-base
+        );
+        text-align: center;
+    }
+
+    &__icon {
+        font-size: rem(16px);
+    }
+
+    &__message {
+        @include typography(
+            $family: $ff-text,
+            $size: $fs-200,
+            $weight: 700,
+            $line-height: 1,
+            $color: $neutral-900
+        );
+
+        margin-top: rem(20px);
+        text-align: center;
+    }
+
+    &__btn {
+        @include typography(
+            $family: $ff-modal-btn,
+            $line-height: $line-height-subheading
+        );
+        margin-top: rem(20px);
+        width: 100%;
+    }
+
+    &__btn-badge {
+        @include typography(
+            $size: $fs-200,
+            $weight: 500,
+            $family: $ff-modal-btn,
+            $line-height: 1,
+            $color: white
+        );
+        padding-top: 3px;
+        border-radius: $border-radius-full;
+        width: rem(18px);
+        aspect-ratio: 1 / 1;
+        background-color: theme.$brand-color-primary;
+    }
+
+    @include respond-to('lg') {
+        border-radius: $border-radius-lg;
+        margin: auto;
+    }
+}

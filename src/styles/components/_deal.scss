@@ -1,0 +1,84 @@
+@use '../abstracts' as *;
+@use '../themes/default' as theme;
+
+.deal {
+    @include flex($justify: space-between);
+
+    margin-top: rem(10px);
+    width: 100%;
+    padding: rem(16px);
+    border-radius: $border-radius-md;
+    border: 1px solid rgba($pink-500, 0.2);
+    background: linear-gradient(
+        90deg,
+        rgba($pink-500, 0.05) 0%,
+        rgba($purple-600, 0.05) 100%
+    );
+
+    &__text {
+        @include flex($direction: column, $row-gap: rem(4px));
+    }
+
+    &__label {
+        @include typography(
+            $family: $ff-text,
+            $size: $fs-300,
+            $weight: 600,
+            $line-height: 1,
+            $color: theme.$heading-color
+        );
+    }
+
+    &__expiry {
+        @include typography(
+            $family: $ff-text,
+            $size: $fs-200,
+            $weight: $fw-text,
+            $line-height: 1,
+            $color: $purple-600
+        );
+    }
+
+    &__code-container {
+        @include flex($col-gap: rem(8px));
+    }
+
+    &__code {
+        @include typography(
+            $family: monospace,
+            $size: $fs-200,
+            $weight: 700,
+            $line-height: 1
+        );
+        flex-shrink: 0;
+        background-color: white;
+        border: 1px solid $neutral-300;
+        border-radius: $border-radius-sm;
+        height: fit-content;
+
+        letter-spacing: 5%;
+        text-transform: uppercase;
+        padding: rem(4px, 10px);
+    }
+    &__copy-btn {
+        color: $pink-500;
+    }
+
+    &--hidden {
+        display: none;
+    }
+
+    &--expired {
+        background: $neutral-200;
+        border-color: rgba($neutral-900, 0.1);
+
+        // Please ignore ;-;
+        .deal__expiry {
+            color: theme.$text-color-base;
+        }
+
+        .deal__copy-btn {
+            color: theme.$text-color-base;
+        }
+    }
+}

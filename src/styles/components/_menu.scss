@@ -11,7 +11,7 @@
     opacity: 0;
     padding-top: rem(104px);
     transition: 0.3s;
-    z-index: 100;
+    z-index: 4;
     box-shadow: $shadow-md, $shadow-lg;
     @include respond-to('lg') {
         display: none;

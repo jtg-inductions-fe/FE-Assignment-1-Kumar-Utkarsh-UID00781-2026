@@ -5,6 +5,7 @@ const headerMenu = document.querySelector('.header__menu');
 const toggleBtn = document.querySelector('.header__toggle-btn');
 const accordions = document.querySelectorAll('.accordion');
 const header = document.querySelector('header');
+const specialDealsDialog = document.querySelector('#special-deals-dialog');
 
 // Viewport flags
 const isTablet = window.matchMedia('(min-width: 430px)');
@@ -67,8 +68,11 @@ toggleBtn.addEventListener('click', () => {
 
 // Closing menu when clicking outside the menu on tablet view
 body.addEventListener('click', (e) => {
+    if (!headerMenu.classList.contains('menu--active')) return;
     if (!headerMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
-        enableScroll();
+        if (!specialDealsDialog.open) {
+            enableScroll();
+        }
         toggleBtn.ariaExpanded = false;
         toggleBtn.ariaLabel = 'Open menu';
         toggleBtn.classList.remove('toggle-btn--open');
@@ -119,4 +123,21 @@ accordions.forEach((accordion) => {
             toggle.ariaLabel = `Open ${accordion.querySelector('.accordion__label').textContent} accordion`;
         }
     });
+});
+
+// Disabling Scroll on modal
+specialDealsDialog.addEventListener('toggle', () => {
+    if (specialDealsDialog.open) disableScroll();
+    if (!specialDealsDialog.open) enableScroll();
+});
+
+// Copy functionality on modal deals
+specialDealsDialog.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('deal__copy-btn')) {
+        const codeContainer = e.target.previousElementSibling;
+        const code = codeContainer.innerText;
+        await navigator.clipboard.writeText(code);
+        e.target.classList.toggle('icon-check');
+        setTimeout(() => e.target.classList.toggle('icon-check'), 2500);
+    }
 });

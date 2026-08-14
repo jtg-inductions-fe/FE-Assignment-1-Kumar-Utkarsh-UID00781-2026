@@ -1,7 +1,7 @@
 /**
  * Fetches all deals from the API endpoint
  *
- * @async
+ *
  * @returns {Array} deals - An array of all deals fetched from the API endpoint
  */
 async function fetchData() {
@@ -14,7 +14,7 @@ async function fetchData() {
         }
         return response.json();
     } catch {
-        // Cannot log errors due to eslint rules
+        return [];
     }
 }
 

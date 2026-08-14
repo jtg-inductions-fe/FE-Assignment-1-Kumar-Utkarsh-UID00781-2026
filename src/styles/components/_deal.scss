@@ -50,12 +50,12 @@
             $weight: 700,
             $line-height: 1
         );
+
         flex-shrink: 0;
         background-color: white;
         border: 1px solid $neutral-300;
         border-radius: $border-radius-sm;
         height: fit-content;
-
         letter-spacing: 5%;
         text-transform: uppercase;
         padding: rem(4px, 10px);
@@ -69,16 +69,12 @@
     }
 
     &--expired {
-        background: $neutral-200;
-        border-color: rgba($neutral-900, 0.1);
-
-        // Please ignore ;-;
-        .deal__expiry {
-            color: theme.$text-color-base;
-        }
+        filter: grayscale(1);
 
         .deal__copy-btn {
-            color: theme.$text-color-base;
+            &:hover {
+                cursor: not-allowed;
+            }
         }
     }
 }

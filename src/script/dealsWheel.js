@@ -104,6 +104,7 @@ function updateWonDeals(wonDeal) {
         Date.now() + (wonDeal.validFor ?? 7) * 24 * 60 * 60 * 1000,
     );
     wonDeals.push(wonDeal);
+    wonDeals.sort((a, b) => a.validUpto - b.validUpto);
     modalBadge.innerText = wonDeals.length;
     localStorage.setItem('wonDeals', JSON.stringify(wonDeals));
 }
@@ -115,27 +116,35 @@ function updateWonDeals(wonDeal) {
  * @param {number} code - The coupon code of the deal won
  * @param {number} validFor - The number of days the deal will be valid for
  */
-function renderwonDeal(label, code, validFor) {
+function renderWonDeal(label, code, validFor) {
     dealContainer.classList.remove('deal--hidden');
     const HTMLMarkup = `<div class="deal__text">
-                        <p class="deal__label">${label}</p>
+                        <p class="deal__label"></p>
                         <p class="deal__expiry">
-                            Expires in <span class="deal__expiry-date">${validFor ?? 7}</span>d
+                            Expires in <span class="deal__expiry-date"></span>d
                         </p>
                     </div>
                     <div class="deal__code-container">
-                        <p class="deal__code">${code}</p>
+                        <p class="deal__code"></p>
                         <button class="deal__copy-btn icon-copy"></button>
                     </div>`;
     dealContainer.innerHTML = HTMLMarkup;
+    const dealLabelContainer = dealContainer.querySelector('.deal__label');
+    const dealExpiryContainer =
+        dealContainer.querySelector('.deal__expiry-date');
+    const dealCodeContainer = dealContainer.querySelector('.deal__code');
+
+    dealLabelContainer.textContent = label;
+    dealCodeContainer.textContent = code;
+    dealExpiryContainer.textContent = validFor ?? 7;
 }
 
 /**
  * Disables spin button when the animation is running
  * Chooses the final angle to be animated upto between 45deg, 135deg, 225deg, 315deg randomly
  * Animates the partitions with 15 spins + final angle
- * Update
- * @async
+ * Update won deal array and localStorage via updateWonDeals() and render the won deal with renderWonDeal()
+ *
  */
 async function spinWheel() {
     const spinBtn = wheel.querySelector('.wheel__spin-btn');
@@ -156,7 +165,7 @@ async function spinWheel() {
 
     await partitions.animate(keyframes, spinTiming).finished;
     updateWonDeals(wonDeal);
-    renderwonDeal(wonDeal.label, wonDeal.promoCode, wonDeal.validFor);
+    renderWonDeal(wonDeal.label, wonDeal.promoCode, wonDeal.validFor);
     message.innerText = 'You won!';
     spinBtn.disabled = false;
 }

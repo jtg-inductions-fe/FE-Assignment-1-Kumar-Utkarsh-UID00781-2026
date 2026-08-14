@@ -10,26 +10,58 @@ const dealsContainer = document.querySelector('.deals-container');
 export function populateDeals() {
     const wonDeals = JSON.parse(localStorage.getItem('wonDeals'));
 
-    let HTMLMarkup = wonDeals
-        .map(({ label, promoCode, validUpto }) => {
-            const daysLeft = Math.max(
-                Math.ceil(
-                    (new Date(validUpto) - Date.now()) / (1000 * 60 * 60 * 24),
-                ),
-                0,
-            );
-            return `<div class='deal ${daysLeft <= 0 ? 'deal--expired' : ''}'><div class="deal__text">
-                            <p class="deal__label">${label}</p>
-                            <p class="deal__expiry">
-                            ${daysLeft <= 0 ? 'Deal expired' : `Expires in <span class="deal__expiry-date">${daysLeft}d</span>`}
-                            </p>
-                        </div>
-                        <div class="deal__code-container">
-                            <p class="deal__code">${promoCode}</p>
-                            <button class="deal__copy-btn icon-copy" ${daysLeft <= 0 ? 'disabled' : ''}></button>
-                        </div></div>`;
-        })
-        .join(' ');
+    dealsContainer.textContent = '';
 
-    dealsContainer.innerHTML = HTMLMarkup;
+    wonDeals.forEach(({ label, promoCode, validUpto }) => {
+        const daysLeft = Math.max(
+            Math.ceil(
+                (new Date(validUpto) - Date.now()) / (1000 * 60 * 60 * 24),
+            ),
+            0,
+        );
+        const isExpired = daysLeft <= 0;
+
+        const dealDiv = document.createElement('div');
+        dealDiv.className = `deal ${isExpired ? 'deal--expired' : ''}`;
+
+        const textDiv = document.createElement('div');
+        textDiv.className = 'deal__text';
+
+        const labelP = document.createElement('p');
+        labelP.className = 'deal__label';
+        labelP.textContent = label;
+
+        const expiryP = document.createElement('p');
+        expiryP.className = 'deal__expiry';
+        if (isExpired) {
+            expiryP.textContent = 'Deal expired';
+        } else {
+            expiryP.textContent = 'Expires in ';
+            const span = document.createElement('span');
+            span.className = 'deal__expiry-date';
+            span.textContent = `${daysLeft}d`;
+            expiryP.appendChild(span);
+        }
+
+        textDiv.appendChild(labelP);
+        textDiv.appendChild(expiryP);
+
+        const codeDiv = document.createElement('div');
+        codeDiv.className = 'deal__code-container';
+
+        const codeP = document.createElement('p');
+        codeP.className = 'deal__code';
+        codeP.textContent = promoCode;
+
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'deal__copy-btn icon-copy';
+        if (isExpired) copyBtn.disabled = true;
+
+        codeDiv.appendChild(codeP);
+        codeDiv.appendChild(copyBtn);
+
+        dealDiv.appendChild(textDiv);
+        dealDiv.appendChild(codeDiv);
+        dealsContainer.appendChild(dealDiv);
+    });
 }

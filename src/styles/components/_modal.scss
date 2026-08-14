@@ -10,7 +10,6 @@
     border-top-right-radius: $border-radius-lg;
     transform: translateY(100%);
     transition:
-        // margin 0.3s ease-out allow-discrete,
         transform 0.3s ease-out,
         overlay 0.3s ease-out allow-discrete,
         display 0.3s ease-out allow-discrete;
@@ -22,7 +21,6 @@
     @starting-style {
         &:open {
             transform: translateY(100%);
-            // margin-bottom: -100%;
         }
     }
 
@@ -68,6 +66,7 @@
             $family: $ff-text,
             $line-height: 1
         );
+
         text-align: center;
     }
 
@@ -78,6 +77,7 @@
             $line-height: 1,
             $color: theme.$text-color-base
         );
+
         text-align: center;
     }
 
@@ -103,6 +103,7 @@
             $family: $ff-modal-btn,
             $line-height: $line-height-subheading
         );
+
         margin-top: rem(20px);
         width: 100%;
     }
@@ -115,6 +116,7 @@
             $line-height: 1,
             $color: white
         );
+
         padding-top: 3px;
         border-radius: $border-radius-full;
         width: rem(18px);

@@ -37,7 +37,6 @@
             'one two'
             'four three';
         height: 100%;
-        // animation: spinx10 3s ease-out 2s infinite;
 
         & > div:nth-child(1) {
             background-color: $pink-500;
@@ -58,6 +57,7 @@
     }
     &__partition {
         @include flex($align: center, $justify: center);
+
         aspect-ratio: 1 / 1;
         width: 100%;
     }

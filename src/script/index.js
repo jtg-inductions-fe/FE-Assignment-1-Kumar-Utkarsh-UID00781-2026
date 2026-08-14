@@ -21,32 +21,19 @@ window.addEventListener('scroll', () => {
 
 // HEADER MENU INTERACTIONS
 // Functions for Enabling and Disabling scroll when menu is open
-/**
- * Prevents default behaviour of the passed event when called.
- * @param {Event} e
- */
-function preventDefault(e) {
-    e.preventDefault();
-}
 
 /**
  * Prevents touchmove and wheel event default behaviour when called.
  */
 function disableScroll() {
-    body.addEventListener('touchmove', preventDefault, {
-        passive: false,
-    });
-    body.addEventListener('wheel', preventDefault, {
-        passive: false,
-    });
+    body.style.overflow = 'hidden';
 }
 
 /**
  * Removes the eventListener which prevents touchmove and wheel event default behaviour.
  */
 function enableScroll() {
-    body.removeEventListener('touchmove', preventDefault);
-    body.removeEventListener('wheel', preventDefault);
+    body.style.overflow = 'auto';
 }
 
 // Adding and Closing menu from toggle button
@@ -136,8 +123,12 @@ specialDealsDialog.addEventListener('click', async (e) => {
     if (e.target.classList.contains('deal__copy-btn')) {
         const codeContainer = e.target.previousElementSibling;
         const code = codeContainer.innerText;
-        await navigator.clipboard.writeText(code);
-        e.target.classList.toggle('icon-check');
-        setTimeout(() => e.target.classList.toggle('icon-check'), 2500);
+        try {
+            await navigator.clipboard.writeText(code);
+            e.target.classList.toggle('icon-check');
+            setTimeout(() => e.target.classList.toggle('icon-check'), 2500);
+        } catch {
+            setTimeout(() => e.target.classList.toggle('icon-cross'), 2500);
+        }
     }
 });

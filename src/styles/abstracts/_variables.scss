@@ -1,6 +1,7 @@
 @use 'functions' as f;
 
 // Font sizes
+$fs-200: f.rem(12px);
 $fs-300: f.rem(14px);
 $fs-400: f.rem(16px);
 $fs-450: f.rem(18px);
@@ -16,7 +17,10 @@ $fs-900: f.rem(70px);
 $ff-heading: 'Circular Std', sans-serif;
 $ff-subheading: 'Circular Std', sans-serif;
 $ff-button: 'Circular Std', sans-serif;
-$ff-text: Inter, sans-serif;
+$ff-modal-heading: 'Inter', sans-serif;
+$ff-modal-eyebrow: 'Inter', sans-serif;
+$ff-modal-btn: 'Figtree', sans-serif;
+$ff-text: 'Inter', sans-serif;
 
 // Font Weight
 $fw-heading: 700;
@@ -24,6 +28,8 @@ $fw-subheading: 700;
 $fw-button: 700;
 $fw-card-value: 700;
 $fw-card-label: 400;
+$fw-modal-heading: 700;
+$fw-modal-eyebrow: 600;
 $fw-text: 400;
 
 // Line Height
@@ -39,20 +45,27 @@ $neutral-200: #eeeeee;
 $neutral-100: #ffffff;
 $orange-400: #ff5722;
 $pink-400: #f85e95;
+$pink-500: #f4436c;
 $purple-300: #6d60ce;
 $purple-400: #5d50c6;
 $purple-500: #5749bb;
+$purple-600: #7c3aed;
 $yellow-400: #facd49;
+$yellow-500: #fbbf24;
+$blue-400: #06b6d4;
 
 // Shadows
 $shadow-sm: 0 5px 11px 0 rgba(0, 0, 0, 0.1);
 $shadow-md: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
 $shadow-lg: 0 45px 27px 0 rgba(0, 0, 0, 0.05);
+$shadow-center: 0 0 50px 7px rgba(0, 0, 0, 0.25);
+$shadow-pink: 0 2px 14px 0 rgba($pink-500, 0.35);
 
 // Border Radius
 $border-radius-sm: 8px;
 $border-radius-md: 16px;
-$border-radius-lg: 32px;
+$border-radius-lg: 24px;
+$border-radius-xl: 32px;
 $border-radius-full: 1000px;
 
 // Breakpoints

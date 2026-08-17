@@ -7,7 +7,19 @@ const headerMenuLinksList = document.querySelector('.menu__links');
 // Render Desktop Nav Links
 const headerNavLinksHtml = data.navbar.links
     .map(({ href, label }) => {
-        return `<li><a class="nav__link ${label.toLowerCase() === 'home' ? 'nav__link--active' : ''}" href="${href}" >${label}</a></li>`;
+        if (label.toLowerCase() === 'home') {
+            return `<li><a class="nav__link nav__link--active" href="${href}" >${label}</a></li>`;
+        }
+        if (label.toLowerCase() === 'special deals') {
+            return `<li><button
+                class="nav__link"
+                command="show-modal"
+                commandfor="special-deals-dialog"
+            >
+                ${label}
+            </button></li>`;
+        }
+        return `<li><a class="nav__link" href="${href}" >${label}</a></li>`;
     })
     .join('');
 headerNavLinksList.innerHTML = headerNavLinksHtml;
@@ -15,6 +27,15 @@ headerNavLinksList.innerHTML = headerNavLinksHtml;
 // Render Mobile / Table Menu Nav Links
 const headerMenuLinksHtml = data.navbar.links
     .map(({ href, label }) => {
+        if (label.toLowerCase() === 'special deals') {
+            return `<li><button
+                class="menu__link"
+                command="show-modal"
+                commandfor="special-deals-dialog"
+            >
+                ${label}
+            </button></li>`;
+        }
         return `<li><a class="menu__link" href="${href}" >${label}</a></li>`;
     })
     .join('');

@@ -7,13 +7,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
-        <link
             href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
             rel="stylesheet"
         />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:opsz,wght@14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
     <body>
@@ -390,6 +391,42 @@
                     class="testimonials__background-img"
                 />
             </section>
+            <dialog id="special-deals-dialog" class="modal">
+                <button
+                    type="button"
+                    commandfor="special-deals-dialog"
+                    command="close"
+                    aria-label="Close special deals"
+                    class="btn btn--secondary modal__close-btn icon-close"
+                ></button>
+                <div class="modal__text">
+                    <hgroup class="modal__header">
+                        <p class="modal__eyebrow">
+                            <span class="icon-gift modal__icon"></span> Special
+                            Deals
+                        </p>
+                        <h2 class="modal__heading">Spin &amp; Win!</h2>
+                    </hgroup>
+                    <p class="modal__description">
+                        Tap the center of the wheel to spin
+                    </p>
+                </div>
+                <div class="modal__content"></div>
+
+                <div class="wheel"><p>Loading...</p></div>
+                <div class="deals-container deals-container--hidden"></div>
+                <p class="modal__message"></p>
+
+                <div id="wheel-deal" class="deal deal--hidden"></div>
+
+                <button
+                    type="button"
+                    class="modal__btn btn btn--secondary btn--bordered"
+                >
+                    View All Unlocked deals
+                    <span class="modal__btn-badge">0</span>
+                </button>
+            </dialog>
         </main>
         <footer class="footer container">
             <div class="footer__brand">
@@ -568,6 +605,8 @@
         </footer>
         <script type="module" src="./src/script/renderFromJSON.js"></script>
         <script type="module" src="./src/script/splide.js"></script>
+        <script type="module" src="./src/script/modalViewSwitcher.js"></script>
+        <script type="module" src="./src/script/dealsWheel.js"></script>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

@@ -29,7 +29,7 @@
     &__floater {
         @include position($type: absolute);
 
-        z-index: 3;
+        z-index: 2;
     }
 
     &__background-img {
@@ -87,11 +87,11 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        z-index: 2;
+        z-index: 1;
         border-radius: $border-radius-md;
 
         @include respond-to('lg') {
-            border-radius: $border-radius-lg;
+            border-radius: $border-radius-xl;
         }
     }
 

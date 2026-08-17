@@ -19,6 +19,7 @@
     }
     &__icon-container {
         @include flex($justify: center, $align: center);
+
         height: fit-content;
         padding: rem(4px);
         aspect-ratio: 1 / 1;

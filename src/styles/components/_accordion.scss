@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+@use '../base/typography' as *;
+@use '../themes/default' as theme;
+
+.accordion {
+    @include flex($direction: column, $row-gap: rem(20px));
+
+    &__toggle {
+        @include flex($direction: row, $justify: space-between, $align: center);
+
+        @include typography(
+            $size: $fs-500,
+            $weight: $fw-heading,
+            $family: $ff-heading
+        );
+
+        width: 100%;
+        background-color: theme.$bg-color;
+    }
+    &__icon-container {
+        @include flex($justify: center, $align: center);
+        height: fit-content;
+        padding: rem(4px);
+        aspect-ratio: 1 / 1;
+        border-radius: $border-radius-full;
+        border: 1px solid $neutral-700;
+    }
+    &__icon {
+        font-size: $fs-300;
+        transition: transform 0.15s;
+        color: $neutral-700;
+
+        &--active {
+            transform: rotate(180deg);
+        }
+    }
+    &__content {
+        @include grid($rows: 0fr);
+
+        opacity: 0;
+        transition:
+            grid-template-rows 0.15s,
+            opacity 0.15s;
+
+        > * {
+            overflow: hidden;
+        }
+
+        &--active {
+            @include grid($rows: 1fr);
+
+            opacity: 1;
+        }
+    }
+}

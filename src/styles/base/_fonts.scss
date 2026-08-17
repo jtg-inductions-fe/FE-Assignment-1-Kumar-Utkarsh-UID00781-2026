@@ -12,6 +12,22 @@
     font-display: block;
 }
 
+@font-face {
+    font-family: 'Circular Std';
+    src: url('/assets/fonts/CircularStd-Book.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('/assets/fonts/CircularStd-Bold.woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+}
+
 [class^='icon-'],
 [class*=' icon-'] {
     font-family: 'icomoon' !important;
@@ -72,4 +88,7 @@
 }
 .icon-arrow-left2:before {
     content: '\ea40';
+}
+.icon-chevron-down:before {
+    content: '\e908';
 }

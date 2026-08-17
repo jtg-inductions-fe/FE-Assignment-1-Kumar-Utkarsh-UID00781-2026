@@ -4,14 +4,22 @@
 @use 'sass:map';
 
 .header {
-    @include flex($justify: space-between, $align: center, $col-gap: 1rem);
-  
     @include position(sticky, 0px);
-  
-    padding-block: rem(16px);
+
+    transition:
+        background-color 0.15s,
+        box-shadow 0.15s;
+    backdrop-filter: blur(0px);
     z-index: 10;
-    backdrop-filter: blur(10px);
-    background-color: rgba(theme.$bg-color, 0.8);
+    padding-block: rem(16px);
+
+    &__content {
+        @include flex($justify: space-between, $align: center, $col-gap: 1rem);
+    }
+    &--scrolled {
+        background-color: theme.$bg-color;
+        box-shadow: $shadow-md;
+    }
 
     &__skip-link {
         position: absolute !important;
@@ -53,6 +61,7 @@
 
     @include respond-to('lg') {
         padding: rem(40px, 32px);
+        margin-top: rem(32px);
 
         &__logo {
             @include position(static);

@@ -20,14 +20,6 @@ html {
    ========================================================================== */
 
 /**
- * Remove the margin in all browsers.
- */
-
-body {
-    margin: 0;
-}
-
-/**
  * Render the `main` element consistently in IE.
  */
 
@@ -177,7 +169,7 @@ fieldset {
     vertical-align: baseline;
 }
 
-*:focus {
+*:focus-visible {
     outline: 2px dashed theme.$brand-color-primary;
     outline-offset: 4px;
 }
@@ -190,10 +182,9 @@ html {
 body {
     min-height: 100vh;
     height: 100%;
-
-    @include respond-to('lg') {
-        padding-block: 2rem;
-    }
+    margin: 0;
+    font-family: $ff-text;
+    -webkit-font-smoothing: antialiased;
 }
 
 input,
@@ -201,6 +192,10 @@ button,
 textarea,
 select {
     font: inherit;
+}
+
+button {
+    cursor: pointer;
 }
 
 p,

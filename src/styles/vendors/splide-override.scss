@@ -38,7 +38,11 @@
         }
 
         &:disabled {
-            opacity: unset;
+            cursor: not-allowed;
+            opacity: 50%;
+            background-color: theme.$bg-color;
+            color: theme.$text-color-base;
+            box-shadow: none;
         }
 
         @include respond-to('md') {

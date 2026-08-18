@@ -12,12 +12,11 @@ async function fetchData() {
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
-        return response.json();
+        const deals = await response.json();
+        return deals;
     } catch {
         return [];
     }
 }
 
-const deals = await fetchData();
-
-export { deals };
+export { fetchData };

@@ -1,4 +1,4 @@
-import { deals } from './utilities/fetchData';
+import { fetchData } from './utilities/fetchData';
 
 const modal = document.querySelector('.modal');
 const modalBadge = document.querySelector('.modal__btn-badge');
@@ -18,8 +18,21 @@ const spinTiming = {
 let wonDeals = JSON.parse(localStorage.getItem('wonDeals')) || []; // Will be fetched from localStorage later on
 modalBadge.innerText = wonDeals.length;
 
+let deals = [];
 let chosenDeals = [];
 let spunOnce = false;
+
+/**
+ *  Fetches deals using the fetchData() function only if we don't already have data stored in deals variable.
+ *  This function is called when modal opens
+ *
+ *
+ */
+async function initDeals() {
+    if (deals.length === 0) {
+        deals = await fetchData();
+    }
+}
 
 /**
  * Finds what deals are left and chooses 4 deals randomly out of them
@@ -207,8 +220,9 @@ function renderWheel() {
     bindSpinBtn();
 }
 
-modal.addEventListener('toggle', () => {
+modal.addEventListener('toggle', async () => {
     if (modal.open) {
+        await initDeals();
         renderWheel();
         // Load deals whenever modal pops up to keep badge number updated
         wonDeals = JSON.parse(localStorage.getItem('wonDeals')) || []; // Will be fetched from localStorage later on

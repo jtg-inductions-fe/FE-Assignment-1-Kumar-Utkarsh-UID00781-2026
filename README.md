@@ -1,4 +1,13 @@
-## Getting Started
+# [Travlog] (https://travlog-kumarutkarsh.netlify.app/)
+
+Link to website: https://travlog-kumarutkarsh.netlify.app/
+
+### Tech Stack
+
+-   Markup: HTML 5
+-   Styling: SCSS
+-   Scripting language: JavaScript
+-   Hosting: Netlify
 
 ### Prerequisites
 
@@ -65,3 +74,8 @@ To set up the project on your local environment, follow these steps:
     ```bash
     npm run lint
     ```
+
+### Deployment
+
+-   This project utilizes **Netlify** for continuous deployment.
+-   Pushing a commit to the `main` branch will automatically trigger a build and publish the live updates.

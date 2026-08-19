@@ -1,4 +1,4 @@
-import { populateDeals } from './populateDeals';
+import { populateDeals } from './utilities/populateDeals';
 
 const wheel = document.querySelector('.wheel');
 const wheelDeal = document.querySelector('#wheel-deal');

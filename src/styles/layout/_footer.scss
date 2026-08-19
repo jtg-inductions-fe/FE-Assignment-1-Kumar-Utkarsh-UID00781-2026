@@ -55,6 +55,7 @@
     }
     &__list {
         @include flex($direction: column, $row-gap: rem(16px));
+
         padding: 6px;
     }
     &__nav {
@@ -81,6 +82,7 @@
         text-decoration: none;
         &:hover {
             @include typography($color: theme.$text-color-dark);
+
             text-decoration: underline;
         }
     }

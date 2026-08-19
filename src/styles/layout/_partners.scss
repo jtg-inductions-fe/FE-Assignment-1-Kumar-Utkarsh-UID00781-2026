@@ -9,20 +9,46 @@
         $col-gap: rem(28px)
     );
 
+    @include position($type: relative);
+
     padding-block: rem(32px);
+
+    &__partner-img {
+        height: rem(20px);
+    }
+
+    &__gradient-circle {
+        @include position($type: absolute, $top: 50%, $right: 0);
+        display: none;
+        transform: translateY(-50%);
+        aspect-ratio: 1 / 1;
+        border-radius: $border-radius-full;
+        opacity: 50%;
+        background-color: $yellow-400;
+        z-index: -1;
+    }
 
     @include respond-to('md') {
         padding-block: rem(64px);
+
+        &__gradient-circle {
+            display: block;
+            filter: blur(250px);
+            width: 420px;
+        }
+
+        &__partner-img {
+            height: rem(32px);
+        }
     }
 
     @include respond-to('lg') {
         @include flex($justify: space-between);
-    }
 
-    &__partner-img {
-        height: rem(20px);
-        @include respond-to('md') {
-            height: rem(32px);
+        &__gradient-circle {
+            display: block;
+            filter: blur(250px);
+            width: 500px;
         }
     }
 }

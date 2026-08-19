@@ -5,6 +5,7 @@
 
 .header {
     @include position(sticky, 0px);
+
     transition:
         background-color 0.15s,
         box-shadow 0.15s;

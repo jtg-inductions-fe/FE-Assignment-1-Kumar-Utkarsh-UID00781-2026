@@ -1,4 +1,4 @@
-import { populateDeals } from './populateDeals';
+import { populateDeals } from './utilities/populateDeals';
 
 const wheel = document.querySelector('.wheel');
 const wheelDeal = document.querySelector('#wheel-deal');
@@ -16,7 +16,7 @@ modalBtn.addEventListener('click', () => {
         modalDescription.innerText = 'Tap the center of the wheel to spin';
         const wonDeals = JSON.parse(localStorage.getItem('wonDeals'));
         modalBtn.innerHTML = `
-                    View All Unlocked deals22wwwww
+                    View All Unlocked
                     <span class="modal__btn-badge">${wonDeals.length}</span>
                 `;
     } else {
